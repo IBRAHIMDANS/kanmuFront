@@ -11,7 +11,7 @@ deploy:
     - apt-get update -qy
     - apt-get install -yqq ruby ruby-dev nodejs --silent
     - gem install dpl
-    - dpl --provider=heroku --app=kanmu --api-  key=$HEROKU_TOKEN
+    - dpl --provider=heroku --app=kanmu --api-key=$HEROKU_TOKEN
   when: manual
   only:
     - master
