@@ -12,7 +12,7 @@
       </ul>
 
       <div class="button-container">
-        <a class="button">En savoir plus</a>
+        <a class="button" href="about" >En savoir plus</a>
       </div>
     </div>
   </div>
@@ -162,6 +162,9 @@ h3:after{
   text-align: center;
   margin:0 0 50px 0;
 }
+.button-container > a{
+  text-decoration: none;
+ }
 
 .button{
   display:inline-block;

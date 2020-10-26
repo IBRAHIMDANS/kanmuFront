@@ -22,17 +22,22 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet',  href: 'https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons' },
     ],
   },
   /*
   ** Global CSS
   */
-  css: [],
+  css: [
+    '~/css/main.css'
+  ],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [],
+  plugins: [
+    { src: '@/plugins/vue-material.js', mode: 'client' }
+  ],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
@@ -66,4 +71,5 @@ export default {
     //   }
     // },
   },
+
 };
