@@ -36,7 +36,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '@/plugins/vue-material.js', mode: 'client' }
+    { src: '@/plugins/vue-material.js', mode: 'client' },
+    { src: '@/plugins/marked.js', mode: 'client' }
   ],
   /*
   ** Auto import components

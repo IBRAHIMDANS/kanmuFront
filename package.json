@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
+    "marked": "^1.2.2",
     "nuxt": "^2.14.7",
     "vue-material": "^1.0.0-beta-15"
   },

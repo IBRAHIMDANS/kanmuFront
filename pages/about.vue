@@ -17,6 +17,11 @@
 <div>
   <h1>A propos</h1>
 
+  <div v-html="compiledMarkdown">
+    # hello
+    ## Mamanie
+
+  </div>
 </div>
       </div>
     </div>
@@ -30,6 +35,14 @@ import Sidebar from '~/components/Sidebar.vue';
 
 export default Vue.extend({
   components: { Sidebar },
+  data: {
+    data : '# apap'
+  },
+  computed: {
+    compiledMarkdown: function() {
+      // return marked(this.data, { sanitize: true });
+    }
+  }
 });
 </script>
 
