@@ -1,14 +1,15 @@
 <template>
   <div class="result-item">
     <div class="images">
-      <img class="team" :src="teamImage" />
-      <img class="logo" :src="logoImage" />
+      <img class="team" :src="imageTeam" />
+      <img class="logo" :src="imageLogo" />
     </div>
     <div class="informations">
       <h2 class="result-item-title">
-        {{ teamName }}
+        {{ name }}
       </h2>
-      <sub>{{ teamLikes }} personnes aiment cette structure</sub>
+      <sub>{{ _like }} personnes aiment cette structure</sub>
+      <button class="favorite">Favori</button>
     </div>
   </div>
 </template>
@@ -16,12 +17,29 @@
 <script>
 const SearchResultItem = {
   props: {
-    teamImage: String,
-    logoImage: String,
-    teamName: String,
-    teamLikes: String,
+    imageTeam: String,
+    imageLogo: String,
+    name: String,
+    like: Number,
   },
-}
+  computed: {
+    _like: function(){
+      if (this.like < 10){
+        return this.like;
+      }
+
+      if (this.like < 100){
+        return "+ de "+(Math.floor(this.like / 10) * 10);
+      }
+
+      if (this.like < 1000){
+        return "+ de "+(Math.floor(this.like / 100) * 100);
+      }
+
+      return "+ de "+Math.floor(this.like / 1000)+"k";
+    }
+  }
+};
 
 export default SearchResultItem
 </script>
@@ -86,7 +104,40 @@ export default SearchResultItem
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  padding: 50px 50px 50px 170px;
+  padding: 50px 200px 50px 170px;
   box-sizing: border-box;
+  position:relative;
+}
+
+.result-item .informations .favorite.active{
+  background-image: url("/star-active.png");
+  color:#FEC12D;
+}
+
+.result-item .informations .favorite{
+  width:125px;
+  height:50px;
+  position:absolute;
+  right:40px;
+  top:50%;
+  transform:translate3D(0,-50%,0);
+  outline:none;
+  border:0 none transparent;
+  border-radius:300px;
+  box-shadow: 0 3px 6px #00000029;
+  cursor: pointer;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  color:#E3E9ED;
+  font-size:15px;
+  line-height:15px;
+  box-sizing: border-box;
+  padding:0 0 0 50px;
+  background-image: url("/star-disable.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  background-position: left 17px top 14px;
+  text-align: left;
 }
 </style>

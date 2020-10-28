@@ -11,7 +11,7 @@
         />
         <label :for="inputAllId">Tout afficher</label>
       </li>
-      <li v-for="check of data" :v-key="check.id">
+      <li v-for="(check,index) in data" :v-key="check.id" :class="{disable: index >= max && !open}">
         <Checkbox
           :checked="check.checked"
           :input-name="check.id"
@@ -21,6 +21,8 @@
         <label :for="check.id">{{ check.title }}</label>
       </li>
     </ul>
+    <button class="see-more" v-if="!open" @click="more">Voir plus (+)</button>
+    <button class="see-more" v-if="open" @click="less">Voir moins (-)</button>
   </div>
 </template>
 
@@ -28,12 +30,14 @@
 const CheckboxList = {
   data() {
     return {
-      location_all: false,
+      location_all: this.data.filter(item => item.checked).length <= 0,
+      open: false,
     }
   },
   props: {
     all: Boolean,
     title: String,
+    max: Number,
     data: {
       checked: Boolean,
       id: String,
@@ -41,7 +45,14 @@ const CheckboxList = {
     },
   },
   methods: {
+    more: function(){
+      this.open = true;
+    },
+    less: function(){
+      this.open = false;
+    },
     change: function (props) {
+      let update = false;
       if (props.inputId === this.inputAllId) {
         this.location_all = !this.location_all
 
@@ -49,6 +60,7 @@ const CheckboxList = {
           for (const check of this.data) {
             if (check.checked) {
               this.$emit('change', check)
+              update = true;
             }
           }
         }
@@ -57,8 +69,13 @@ const CheckboxList = {
         for (const check of this.data) {
           if (check.id === props.inputId) {
             this.$emit('change', check)
+            update = true;
           }
         }
+      }
+
+      if (update){
+        this.$emit("update");
       }
     },
   },
@@ -90,15 +107,15 @@ export default CheckboxList
   width: 100%;
   height: auto;
   padding: 0;
-  margin: 0;
+  margin: 20px 0;
 }
 
 .filter-group-checkout {
   display: block;
   width: 100%;
   height: auto;
-  padding: 0;
-  margin: 15px 0;
+  padding: 0 0 0 20px;
+  margin:5px 0;
   list-style: none;
 }
 .filter-group-checkout li {
@@ -109,6 +126,9 @@ export default CheckboxList
   box-sizing: border-box;
   list-style: none;
   position: relative;
+  overflow: hidden;
+  max-height:100px;
+  transition:max-height 0.3s;
 }
 
 .filter-group-checkout li .checkbox {
@@ -126,5 +146,31 @@ export default CheckboxList
   font-family: 'Helvetica Neue', sans-serif;
   line-height: 22px;
   display: inline-block;
+}
+
+.see-more{
+  display:block;
+  outline:none;
+  background:transparent;
+  border:0 none transparent;
+  text-align:center;
+  cursor:pointer;
+  width:100%;
+  height:auto;
+  color: #fff;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size:15px;
+  padding: 7px;
+  box-sizing: border-box;
+  line-height: 15px;
+  overflow: hidden;
+  transition:max-height,padding 0.3s;
+}
+
+.filter-group-checkout li.disable,
+.disable {
+  max-height:0;
+  padding: 0;
+  visibility: hidden;
 }
 </style>
