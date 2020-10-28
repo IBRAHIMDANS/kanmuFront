@@ -146,13 +146,13 @@ footer .list li a.linkdln-icon{
   padding-left:40px;
 }
 footer .list li a.linkdln-icon{
-  background-image: url("../assets/icon/social/linkedin.png");
+  background-image: url("../../assets/icon/social/linkedin.png");
 }
 footer .list li a.twitter-icon{
-  background-image: url("../assets/icon/social/twitter.png");
+  background-image: url("../../assets/icon/social/twitter.png");
 }
 footer .list li a.medium-icon{
-  background-image: url("../assets/icon/social/medium.png");
+  background-image: url("../../assets/icon/social/medium.png");
 }
 
 </style>

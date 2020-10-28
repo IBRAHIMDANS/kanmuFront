@@ -1,44 +1,35 @@
 <template>
   <div>
     <div class="centred-title-container">
-      <h3>Voir d’autres équipes</h3>
+      <h3>{{ title }}</h3>
     </div>
     <div class="sponsors-container">
       <ul class="sponsors">
-        <li>
+        <li v-for="item in data" :v-key="item.id">
           <a>
-            <img src="../assets/team/1.png"/>
-          </a>
-        </li>
-        <li>
-          <a>
-            <img src="../assets/team/2.png"/>
-          </a>
-        </li>
-        <li>
-          <a>
-            <img src="../assets/team/3.png"/>
-          </a>
-        </li>
-        <li>
-          <a>
-            <img src="../assets/team/4.png"/>
-          </a>
-        </li>
-        <li>
-          <a>
-            <img src="../assets/team/5.png"/>
-          </a>
-        </li>
-        <li>
-          <a>
-            <img src="../assets/team/7.png"/>
+            <img :src="item.image"/>
+            <span class="title">{{item.title}}</span>
           </a>
         </li>
       </ul>
+      <div class="button-container">
+        <a class="more">Voir plus</a>
+      </div>
     </div>
   </div>
 </template>
+
+
+<script>
+  const Propals = {
+    props: {
+      data: Array,
+      title: String
+    }
+  }
+
+  export default Propals;
+</script>
 
 <style>
 .centred-title-container{
@@ -88,7 +79,7 @@ h3:after{
   height:auto;
   display:inline-flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: stretch;
   align-content: flex-start;
   justify-content: space-around;
@@ -97,24 +88,64 @@ h3:after{
   margin:0;
 }
 .sponsors li{
-  width:auto;
-  max-width:100px;
+  width:50%;
   height:auto;
-  max-height:200px;
   display:block;
-  margin:0 15px;
+  box-sizing:border-box;
+  padding:40px 20px;
   flex-shrink: 1;
   flex-grow: 1;
-  padding:0;
 }
-.sponsors li a,
-.sponsors li img{
+.sponsors li a{
+  display:flex;
+  flex-direction:column;
+  height:auto;
   width:100%;
-  height:100%;
+  padding:0;
+  margin:0;
+  cursor:pointer;
+}
+
+.sponsors li a img{
+  width:100%;
+  height:auto;
+  max-height:350px;
   display:block;
   margin:0;
   padding:0;
-  object-fit: contain;
-  object-position: top;
+  object-fit: cover;
+  object-position:center;
 }
+.sponsors li a .title{
+  width:100%;
+  height:auto;
+  margin:0;
+  display:block;
+  text-align:center;
+  color:#000000;
+  font-family: "Helvetica Neue",sans-serif;
+  font-weight: bold;
+  font-size:22px;
+  line-height:22px;
+  padding:17px 15px;
+  box-sizing:border-box;
+}
+
+.button-container{
+  width:100%;
+  height:auto;
+  text-align:center;
+  display:block;
+}
+.button-container .more{
+  display:inline-block;
+  width:auto;
+  height:auto;
+  font-size:18px;
+  line-height:18px;
+  padding:12px 37px 12px 22px;
+  cursor:pointer;
+  box-shadow: 0 3px 6px #00000029;
+}
+
 </style>

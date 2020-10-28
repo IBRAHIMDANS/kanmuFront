@@ -1,14 +1,16 @@
 <template>
   <div class="split">
-    <img class="left" src="../assets/team/6.png">
+    <div class="left">
+      <img :src="image">
+    </div>
     <div class="right">
-      <h2>LDV Esport</h2>
-      <p class="description">“Première équipe universitaire d’e-sport en France, cette association esport s’est faite remarquer à maintes reprises depuis déjà 4 ans. Une équipe qui excelle en compétition et à le coeur sur la main, comme Dernièrement avec la 14aine e-sport !”</p>
+      <h2>{{ name }}</h2>
+      <p class="description">{{description}}</p>
 
       <ul class="statistiques">
-        <li class="hourglass-icon">5 ans</li>
-        <li class="pin-icon">Courbevoie</li>
-        <li class="user-icon">+ de 30 personnes</li>
+        <li class="hourglass-icon">{{ date }}</li>
+        <li v-if="typeof location === 'string'" class="pin-icon">{{ location }}</li>
+        <li class="user-icon">{{ nbr_players }}</li>
       </ul>
 
       <div class="button-container">
@@ -19,9 +21,58 @@
 
 </template>
 
+<script>
+  const WeeklyTeam = {
+    props: {
+      image: String,
+      name: String,
+      location: String|undefined,
+      description: String,
+      players: Number,
+      created_at: Date,
+    },
+    computed: {
+      date: function(){
+        const diff = (Date.now() - this.created_at.getTime()) / 1000;
+
+        console.log(Date.now(),this.created_at.getTime(),diff);
+
+        if (diff > 31557600){
+          return Math.floor(diff / 31557600)+" ans"
+        }
+
+        if (diff > 2678400){
+          return Math.floor(diff / 2678400)+" mois"
+        }
+
+        if (diff > 604800){
+          return Math.floor(diff / 604800)+" semaines"
+        }
+
+        if (diff > 86400){
+          return Math.floor(diff / 86400)+" heures"
+        }
+
+        if (diff > 3600){
+          return Math.floor(diff / 3600)+" heures"
+        }
+
+        if (diff > 60){
+          return Math.floor(diff / 60)+" minutes"
+        }
+
+        return Math.floor(diff)+" secondes"
+      },
+      nbr_players: function(){
+        return this.players+" joueurs";
+      }
+    }
+  };
+
+  export default WeeklyTeam;
+</script>
+
 <style>
-
-
 .statistiques{
   padding:24px 0 33px 0;
   width:100%;
@@ -46,13 +97,13 @@
   background-size: 20px;
 }
 .statistiques li.hourglass-icon{
-  background-image: url("../assets/icon/hourglass.png");
+  background-image: url("../../assets/icon/hourglass.png");
 }
 .statistiques li.user-icon{
-  background-image: url("../assets/icon/user.png");
+  background-image: url("../../assets/icon/user.png");
 }
 .statistiques li.pin-icon{
-  background-image: url("../assets/icon/pin.png");
+  background-image: url("../../assets/icon/pin.png");
 }
 
 
@@ -95,17 +146,35 @@ h3:after{
   flex-direction: row;
 }
 .left{
-  width:37%;
+  width:47%;
+  min-width:200px;
+  max-width:600px;
   height:auto;
-  max-height:50%;
   object-fit: contain;
-  margin: 23px 23px 0 146px;
+  margin: 23px 0 23px 146px;
   flex-grow: 0;
   flex-shrink: 0;
   z-index: 1;
-  padding-right: 23px;
   background-color: rgb(255,255,255);
+  position:relative;
+  display:block;
+  align-content:center;
+  justify-content:center;
 }
+
+.left img{
+  min-width:100%;
+  height:auto;
+  max-height: 90%;
+  object-fit: cover;
+  padding:0 20px 20px 0;
+  background:#fff;
+  position: absolute;
+  right:0;
+  top:50%;
+  transform:translate3d(18px,calc(-50% + 10px),0);
+}
+
 .right{
   flex-grow: 1;
   flex-shrink: 1;
@@ -178,7 +247,7 @@ h3:after{
   font-size:19px;
   text-align: left;
   color: rgb(0,0,0);
-  background-image: url("../assets/icon/forward.png");
+  background-image: url("../../assets/icon/forward.png");
   background-repeat: no-repeat;
   background-position: right 9px center;
   background-size: 12px;
