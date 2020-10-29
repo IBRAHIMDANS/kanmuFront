@@ -2,8 +2,7 @@
   <nav class="menu">
     <div class="menu-container">
       <img :src="require('../../assets/logo.png')" class="logo"/>
-      <router-link class="outline-button" to="/login">Connexion</router-link>
-      <router-link class="filled-button" to="/register">Inscription</router-link>
+      <router-link class="filled-button" to="/search">Allez sur la plateforme</router-link>
     </div>
   </nav>
 </template>

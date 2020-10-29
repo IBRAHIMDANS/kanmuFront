@@ -6,7 +6,7 @@
     <div class="sponsors-container">
       <ul class="sponsors">
         <li v-for="item in data" :v-key="item.id">
-          <a>
+          <a :href="item.href">
             <img :src="item.image"/>
             <span class="title">{{item.title}}</span>
           </a>

@@ -1,5 +1,5 @@
 <template>
-  <div class="result-item">
+  <a class="result-item" :href="'/structure/'+slug">
     <div class="images">
       <img class="team" :src="imageTeam" />
       <img class="logo" :src="imageLogo" />
@@ -11,7 +11,7 @@
       <sub>{{ _like }} personnes aiment cette structure</sub>
       <button v-on:click="favorite" :class="{favorite: true,active: isFavoriteActive}">Favori</button>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -45,7 +45,9 @@ const SearchResultItem = {
     }
   },
   methods: {
-    favorite: function () {
+    favorite: function (e) {
+      e.preventDefault();
+      e.stopPropagation();
       // @ts-ignore
       this.$emit("favorite",this.slug);
     }
@@ -99,12 +101,16 @@ export default SearchResultItem
   line-height: 38px;
   margin: 5px 0;
   padding: 0;
+  color: #000000;
+  text-decoration: none;
 }
 .result-item .informations sub {
   font-size: 16px;
   line-height: 16px;
   margin: 5px 0;
   padding: 0;
+  color: #000000;
+  text-decoration: none;
 }
 .result-item .informations {
   display: flex;

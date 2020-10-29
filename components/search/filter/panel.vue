@@ -1,5 +1,7 @@
 <template>
-  <div class="left">
+  <div class="left-wrapper">
+    <a href="/" class="project-title">Kanmu</a>
+
     <CheckboxList
       :max="3"
       :all="true"
@@ -20,7 +22,11 @@
 </template>
 
 <script lang="ts">
+  //@ts-ignore
+  import Left from "~/components/util/Left";
+
   const LeftFilterPanel = {
+    components: [Left],
     props: {
       locations: Array,
       games: Array,
@@ -45,7 +51,7 @@
 </script>
 
 <style>
-  .left {
+  .left-wrapper {
     background-color: #e82746;
     position: fixed;
     left: 0;
@@ -55,5 +61,31 @@
     padding: 10px 20px;
     box-sizing: border-box;
     color: #ffffff;
+  }
+
+  .project-title{
+    width:100%;
+    height:auto;
+    margin:30px 0 20px 0;
+    padding:10px 7px 10px 7px;
+    line-height:50px;
+    font-size:50px;
+    text-align:center;
+    position: relative;
+    color: #FFFFFF;
+    text-decoration: none;
+    display:inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Helvetica Neue", sans-serif;
+  }
+  .project-title:before{
+    position:absolute;
+    left:15%;
+    background: #FFFFFF;
+    bottom:0;
+    height:2px;
+    width:70%;
+    content: "";
   }
 </style>

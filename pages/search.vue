@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="right">
+    <div class="right-wrapper">
       <SearchHeader :favorites="favorites" :teams="teams" :search="search" @update="change_search"/>
       <SearchResult @favorite="favorite" :favorites="favorites" :data="teams"/>
     </div>
@@ -212,24 +212,13 @@ export default Vue.extend({
 </script>
 
 <style>
-.left {
-  background-color: #e82746;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 340px;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  color: #ffffff;
-}
-.right {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: auto;
-  width: 100%;
-  padding: 20px 0 20px 340px;
-  box-sizing: border-box;
-}
+  .right-wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: auto;
+    width: calc(100% - 340px);
+    padding: 20px 0;
+    box-sizing: border-box;
+  }
 </style>

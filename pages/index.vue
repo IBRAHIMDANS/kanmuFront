@@ -1,7 +1,7 @@
 <template>
   <div>
     <Title></Title>
-    <WeeklyTeam :image="team.image.team" :players="team.player" :created_at="team.created_at" :name="team.name" :description="team.description"></WeeklyTeam>
+    <WeeklyTeam :href="'/structure/'+team.slug" :image="team.image.team" :players="team.player" :created_at="team.created_at" :name="team.name" :description="team.description"></WeeklyTeam>
     <Propals title="Voir d’autres équipes" :data="_teams"></Propals>
     <Propals title="Nos articles sur l'esport" :data="_articles"></Propals>
     <Footer></Footer>
@@ -62,6 +62,7 @@
           return {
             image: team.image.team,
             title: team.name,
+            href: "/structure/"+team.slug,
           }
         });
       }

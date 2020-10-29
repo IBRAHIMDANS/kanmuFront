@@ -6,7 +6,7 @@
     </div>
     <div class="favorite">
       <span class="text">Favori: </span>
-      <a v-for="team of _teams" :v-key="team.slug" class="item">{{ team.name }}</a>
+      <a v-for="team of _teams" :v-key="team.slug" class="item" :href="'/structure/'+team.slug">{{ team.name }}</a>
     </div>
   </header>
 </template>

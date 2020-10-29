@@ -14,7 +14,7 @@
       </ul>
 
       <div class="button-container">
-        <a class="button" href="about" >En savoir plus</a>
+        <a class="button" :href="href" >En savoir plus</a>
       </div>
     </div>
   </div>
@@ -24,6 +24,7 @@
 <script>
   const WeeklyTeam = {
     props: {
+      href: String,
       image: String,
       name: String,
       location: String|undefined,
