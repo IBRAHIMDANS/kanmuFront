@@ -46,7 +46,7 @@ const GAME = {
   },
 };
 
-type Team = {
+export type Team = {
   image: {
     team: string,
     logo: string

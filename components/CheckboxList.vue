@@ -30,6 +30,7 @@
 const CheckboxList = {
   data() {
     return {
+      // @ts-ignore
       location_all: this.data.filter(item => item.checked).length <= 0,
       open: false,
     }
@@ -38,36 +39,42 @@ const CheckboxList = {
     all: Boolean,
     title: String,
     max: Number,
-    data: {
-      checked: Boolean,
-      id: String,
-      title: String,
-    },
+    data: Array,
   },
   methods: {
     more: function(){
+      // @ts-ignore
       this.open = true;
     },
     less: function(){
+      // @ts-ignore
       this.open = false;
     },
     change: function (props) {
       let update = false;
+      // @ts-ignore
       if (props.inputId === this.inputAllId) {
+        // @ts-ignore
         this.location_all = !this.location_all
 
+        // @ts-ignore
         if (this.location_all) {
+          // @ts-ignore
           for (const check of this.data) {
             if (check.checked) {
+              // @ts-ignore
               this.$emit('change', check)
               update = true;
             }
           }
         }
       } else {
+        // @ts-ignore
         this.location_all = false;
+        // @ts-ignore
         for (const check of this.data) {
           if (check.id === props.inputId) {
+            // @ts-ignore
             this.$emit('change', check)
             update = true;
           }
@@ -75,12 +82,14 @@ const CheckboxList = {
       }
 
       if (update){
+        // @ts-ignore
         this.$emit("update");
       }
     },
   },
   computed: {
     inputAllId: function () {
+      // @ts-ignore
       return 'checkbox-' + this.title + '-all'
     },
   },

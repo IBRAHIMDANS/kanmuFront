@@ -11,14 +11,15 @@
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxt/typescript-runtime": "latest",
     "marked": "^1.2.2",
-    "nuxt": "^2.14.7",
+    "nuxt": "latest",
     "vue-material": "^1.0.0-beta-15"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.14.7",
-    "@nuxt/typescript-build": "^2.0.3",
+    "@nuxt/types": "latest",
+    "@nuxt/typescript-build": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
     "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.12.0",

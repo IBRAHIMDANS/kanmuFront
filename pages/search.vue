@@ -10,8 +10,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+// @ts-ignore
 import LeftFilterPanel from '~/components/search/filter/panel'
+// @ts-ignore
 import SearchHeader from '~/components/search/filter/header'
+// @ts-ignore
 import SearchResult from '~/components/search/result/SearchResult'
 import Teams from "~/static/teams";
 
@@ -115,6 +118,7 @@ export default Vue.extend({
   },
   methods: {
     changeLocation: function (data) {
+      // @ts-ignore
       for (const location of this.locations) {
         if (data.id === location.id) {
           location.checked = !location.checked
@@ -122,6 +126,7 @@ export default Vue.extend({
       }
     },
     changeGame: function (data) {
+      // @ts-ignore
       for (const game of this.games) {
         if (data.id === game.id) {
           game.checked = !game.checked
@@ -129,13 +134,19 @@ export default Vue.extend({
       }
     },
     change_search: function(search){
+      // @ts-ignore
       this.search = search;
 
       this.update();
     },
     update: function () {
+      // @ts-ignore
       const games = this.games.filter(game => game.checked).map(game => game.id);
+
+      // @ts-ignore
       const search = this.search.toLowerCase().trim();
+
+      // @ts-ignore
       const url = new URL(window.location);
 
       url.searchParams.forEach((i: string,key: string) => url.searchParams.delete(key));
@@ -148,9 +159,8 @@ export default Vue.extend({
         url.searchParams.set("q",search);
       }
 
-      if (url !== window.location){
-        window.location = url;
-      }
+      // @ts-ignore
+      window.location = url;
     }
   },
 })

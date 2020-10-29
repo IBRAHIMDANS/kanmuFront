@@ -11,15 +11,26 @@
 
 <script lang="ts">
   import Vue from 'vue'
+  // @ts-ignore
   import WeeklyTeam from '~/components/home/WeeklyTeam.vue'
+  // @ts-ignore
   import Propals from '~/components/home/Propals.vue'
+  // @ts-ignore
   import Footer from '~/components/util/Footer.vue'
+  // @ts-ignore
   import Menu from '~/components/util/Menu.vue'
   import Teams from "~/static/teams";
   import Articles from "~/static/articles";
 
-  export default Vue.extend({
-    asyncData() {
+  type Data = {
+    articles: typeof Articles,
+    teams: typeof Teams,
+    team: any
+  }
+
+  export default Vue.extend<Data>({
+    // @ts-ignore
+    asyncData(): Promise<Data> {
       return Promise.resolve({
          teams: Teams,
          articles: Articles,
@@ -33,7 +44,8 @@
       Menu,
     },
     computed: {
-      _articles: function(){
+      _articles: function(): {image: string,title: string}[] {
+        // @ts-ignore
         return this.articles.slice(0,2).map((article) => {
           return {
             image: article.image,
@@ -41,8 +53,10 @@
           }
         });
       },
-      _teams: function(){
+      _teams: function(): {image: string,title: string}[] {
+        // @ts-ignore
         return this.teams.filter((team) => {
+          // @ts-ignore
           return team.slug !== this.team.slug;
         }).slice(0,2).map((team) => {
           return {

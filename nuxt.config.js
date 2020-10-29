@@ -53,7 +53,6 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [],
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
@@ -73,4 +72,16 @@ export default {
     // },
   },
 
+  moduleOptions: {
+    typeCheck: false,
+    ignoreNotFoundWarnings: true,
+    loaders: {
+      ts: {
+        silent: true
+      },
+      tsx: {
+        silent: true
+      }
+    }
+  }
 };

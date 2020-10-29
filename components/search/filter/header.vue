@@ -23,7 +23,10 @@
         if (evt.which !== 13){
           return;
         }
+
+        // @ts-ignore
         if (evt.target.value !== this.search.toLowerCase().trim()){
+          // @ts-ignore
           this.$emit("update",evt.target.value.toLowerCase().trim());
         }
       }

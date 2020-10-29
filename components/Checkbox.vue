@@ -13,6 +13,7 @@ const Checkbox = {
   },
   methods: {
     change: function () {
+      // @ts-ignore
       this.$emit('change', this);
     },
   },

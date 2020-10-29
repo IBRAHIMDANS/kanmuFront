@@ -27,12 +27,15 @@
     },
     methods: {
       update: function(){
+        // @ts-ignore
         this.$emit("update");
       },
       changeLocation: function (data) {
+        // @ts-ignore
         this.$emit("change-location",data);
       },
       changeGame: function (data) {
+        // @ts-ignore
         this.$emit("change-game",data);
       },
     },

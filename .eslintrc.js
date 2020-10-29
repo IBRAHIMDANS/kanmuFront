@@ -12,7 +12,8 @@ module.exports = {
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // préférez utiliser `plugin:vue/strongly-recommended` ou `plugin:vue/recommended` pour des règles strictes.
     'plugin:vue/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    "@nuxtjs/eslint-config-typescript"
   ],
   // required to lint *.vue files
   plugins: ['vue'],
