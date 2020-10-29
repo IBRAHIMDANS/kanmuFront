@@ -35,10 +35,7 @@ export default {
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [
-    { src: '@/plugins/vue-material.js', mode: 'client' },
-    { src: '@/plugins/marked.js', mode: 'client' }
-  ],
+  plugins: [],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components

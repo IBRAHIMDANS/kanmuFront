@@ -14,22 +14,13 @@
     "@nuxt/typescript-runtime": "latest",
     "marked": "^1.2.2",
     "nuxt": "latest",
-    "vue-material": "^1.0.0-beta-15"
+    "uninstall": "0.0.0"
   },
   "devDependencies": {
     "@nuxt/types": "latest",
     "@nuxt/typescript-build": "latest",
-    "@nuxtjs/eslint-config-typescript": "latest",
-    "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
-    "eslint": "^7.12.0",
-    "eslint-config-prettier": "^6.14.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-vue": "^7.1.0",
     "lodash": "^4.17.20",
-    "prettier": "^2.1.2",
-    "prettier-eslint": "^11.0.0",
     "pretty-quick": "^3.1.0"
   },
   "engines": {

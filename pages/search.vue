@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="right">
-      <SearchHeader :search="search" @update="change_search"/>
-      <SearchResult :data="teams"/>
+      <SearchHeader :favorites="favorites" :teams="teams" :search="search" @update="change_search"/>
+      <SearchResult @favorite="favorite" :favorites="favorites" :data="teams"/>
     </div>
     <LeftFilterPanel :games="games" :locations="locations" @change-game="changeGame" @change-location="changeLocation" @update="update"/>
   </div>
@@ -19,6 +19,28 @@ import SearchResult from '~/components/search/result/SearchResult'
 import Teams from "~/static/teams";
 
 export default Vue.extend({
+  beforeMount(): void {
+    const favorites_json = window.localStorage.getItem("favorites");
+    if (typeof favorites_json === "string"){
+      try{
+        const favorites_data = JSON.parse(favorites_json);
+        const data = Array.isArray(favorites_data) ? favorites_data : [favorites_data];
+
+        // @ts-ignore
+        this.favorites.push(... data.filter(item => typeof item === "string" && item.toLowerCase().trim().length > 0).map(item => item.toLowerCase().trim()));
+      }catch (e) {
+
+      }
+    }
+
+    // @ts-ignore
+    this.favorites = this.favorites.filter((value, index, self) => {
+      return self.indexOf(value) === index;
+    });
+
+    // @ts-ignore
+    window.localStorage.setItem("favorites",JSON.stringify(this.favorites));
+  },
   asyncData(params){
     const games: {id: string,title: string,checked: boolean}[] = [];
 
@@ -76,6 +98,7 @@ export default Vue.extend({
       ],
       search: filter.search.join(" "),
       games: games,
+      favorites: [],
       teams: Teams.filter((team) => {
         if (typeof params.query.q === "string"){
           let ok = false;
@@ -117,6 +140,28 @@ export default Vue.extend({
     SearchHeader: SearchHeader
   },
   methods: {
+    favorite: function (slug) {
+      const _slug = slug.trim().toLowerCase();
+
+      // @ts-ignore
+      const index = this.favorites.indexOf(_slug);
+      if (index < 0){
+        // @ts-ignore
+        this.favorites.push(_slug);
+      }else{
+        // @ts-ignore
+        this.favorites.splice(index,1);
+      }
+
+      // @ts-ignore
+      this.favorites = this.favorites.filter((value, index, self) => {
+        return self.indexOf(value) === index;
+      });
+
+      // @ts-ignore
+      window.localStorage.setItem("favorites",JSON.stringify(this.favorites));
+    },
+
     changeLocation: function (data) {
       // @ts-ignore
       for (const location of this.locations) {

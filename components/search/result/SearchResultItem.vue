@@ -9,7 +9,7 @@
         {{ name }}
       </h2>
       <sub>{{ _like }} personnes aiment cette structure</sub>
-      <button class="favorite">Favori</button>
+      <button v-on:click="favorite" :class="{favorite: true,active: isFavoriteActive}">Favori</button>
     </div>
   </div>
 </template>
@@ -17,6 +17,8 @@
 <script>
 const SearchResultItem = {
   props: {
+    favorites: Array,
+    slug: String,
     imageTeam: String,
     imageLogo: String,
     name: String,
@@ -37,6 +39,15 @@ const SearchResultItem = {
       }
 
       return "+ de "+Math.floor(this.like / 1000)+"k";
+    },
+    isFavoriteActive: function(){
+      return this.favorites.includes(this.slug);
+    }
+  },
+  methods: {
+    favorite: function () {
+      // @ts-ignore
+      this.$emit("favorite",this.slug);
     }
   }
 };
