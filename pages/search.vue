@@ -43,6 +43,7 @@ export default Vue.extend({
   },
   asyncData(params){
     const games: {id: string,title: string,checked: boolean}[] = [];
+    const locations: {id: string,title: string,checked: boolean}[] = [];
 
     const filter: {
       game: string[],
@@ -55,7 +56,10 @@ export default Vue.extend({
     };
 
     if (typeof params.query.game === "string"){
-      filter.game.push(... params.query.game.toLowerCase().split(",").filter(i => i.trim().length > 0).map(i => i.trim()));
+      filter.game.push(... params.query.game.toLowerCase().split(",").filter(i => i.trim().length > 0).map(i => i.trim().toLowerCase()));
+    }
+    if (typeof params.query.location === "string"){
+      filter.location.push(... params.query.location.toLowerCase().split(",").filter(i => i.trim().length > 0).map(i => i.trim().toLowerCase()));
     }
     if (typeof params.query.q === "string"){
       filter.search.push(... params.query.q.toLowerCase().split(" ").filter(i => i.length > 0).map(i => i.trim()));
@@ -63,39 +67,54 @@ export default Vue.extend({
 
     for(const team of Teams){
       for(const game of team.games){
-        if (games.filter(g => g.id === game.slug).length <= 0){
+        if (games.filter(g => g.id === game.slug.trim().toLowerCase()).length <= 0){
           games.push({
             title: game.name,
-            id: game.slug,
-            checked: filter.game.includes(game.slug),
+            id: game.slug.trim().toLowerCase(),
+            checked: filter.game.includes(game.slug.trim().toLowerCase()),
           })
         }
+      }
+
+      if (typeof team.continent !== "undefined" && locations.filter(g => g.id === team.continent!.slug.trim().toLowerCase()).length <= 0){
+        locations.push({
+          title: team.continent.name,
+          id: team.continent.slug.trim().toLowerCase(),
+          checked: filter.location.includes(team.continent.slug.trim().toLowerCase()),
+        })
+      }
+      if (typeof team.country !== "undefined" && locations.filter(g => g.id === team.country!.slug.trim().toLowerCase()).length <= 0){
+        locations.push({
+          title: team.country.name,
+          id: team.country.slug.trim().toLowerCase(),
+          checked: filter.location.includes(team.country.slug.trim().toLowerCase()),
+        })
+      }
+      if (typeof team.state !== "undefined" && locations.filter(g => g.id === team.state!.slug.trim().toLowerCase()).length <= 0){
+        locations.push({
+          title: team.state.name,
+          id: team.state.slug.trim().toLowerCase(),
+          checked: filter.location.includes(team.state.slug.trim().toLowerCase()),
+        })
+      }
+      if (typeof team.region !== "undefined" && locations.filter(g => g.id === team.region!.slug.trim().toLowerCase()).length <= 0){
+        locations.push({
+          title: team.region.name,
+          id: team.region.slug.trim().toLowerCase(),
+          checked: filter.location.includes(team.region.slug.trim().toLowerCase()),
+        })
+      }
+      if (typeof team.department !== "undefined" && locations.filter(g => g.id === team.department!.slug.trim().toLowerCase()).length <= 0){
+        locations.push({
+          title: team.department.name,
+          id: team.department.slug.trim().toLowerCase(),
+          checked: filter.location.includes(team.department.slug.trim().toLowerCase()),
+        })
       }
     }
 
     return {
-      locations: [
-        {
-          id: 'ile-de-france',
-          title: 'Ile de France',
-          checked: false,
-        },
-        {
-          title: "Provence Alpes Côtes d'Azur",
-          id: 'provence-alpes-cotes-d-azur',
-          checked: false,
-        },
-        {
-          title: 'Occitanie',
-          id: 'occitanie',
-          checked: false,
-        },
-        {
-          id: 'bretagne',
-          title: 'Bretagne',
-          checked: false,
-        },
-      ],
+      locations: locations,
       search: filter.search.join(" "),
       games: games,
       favorites: [],
@@ -123,6 +142,30 @@ export default Vue.extend({
               ok = true;
               break;
             }
+          }
+
+          if (!ok){
+            return false;
+          }
+        }
+
+        if (typeof params.query.location === "string"){
+          let ok = false;
+
+          if (typeof team.department !== "undefined" && filter.location.includes(team.department!.slug.trim().toLowerCase())){
+            ok = true;
+          }
+          if (typeof team.continent !== "undefined" && filter.location.includes(team.continent!.slug.trim().toLowerCase())){
+            ok = true;
+          }
+          if (typeof team.state !== "undefined" && filter.location.includes(team.state!.slug.trim().toLowerCase())){
+            ok = true;
+          }
+          if (typeof team.country !== "undefined" && filter.location.includes(team.country!.slug.trim().toLowerCase())){
+            ok = true;
+          }
+          if (typeof team.region !== "undefined" && filter.location.includes(team.region!.slug.trim().toLowerCase())){
+            ok = true;
           }
 
           if (!ok){
@@ -189,6 +232,9 @@ export default Vue.extend({
       const games = this.games.filter(game => game.checked).map(game => game.id);
 
       // @ts-ignore
+      const locations = this.locations.filter(location => location.checked).map(location => location.id);
+
+      // @ts-ignore
       const search = this.search.toLowerCase().trim();
 
       // @ts-ignore
@@ -198,6 +244,9 @@ export default Vue.extend({
 
       if (games.length > 0){
         url.searchParams.set("game",games.join(","));
+      }
+      if (locations.length > 0){
+        url.searchParams.set("location",locations.join(","));
       }
 
       if (search.length > 0){
