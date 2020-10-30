@@ -109,6 +109,7 @@ h3:after{
 .sponsors li a img{
   width:100%;
   height:auto;
+  min-height:300px;
   max-height:350px;
   display:block;
   margin:0;
