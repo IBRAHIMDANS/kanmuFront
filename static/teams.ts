@@ -37,68 +37,68 @@ const SPONSOR = {
   LMN8: {
     name: "LMN8",
     slug: "lmn8",
-    image: "image/sponsor/lmn8.png",
+    image: "/image/sponsor/lmn8.png",
   },
   ESPORT_AGORA: {
     name: "Esport Agora",
     slug: "esport-agora",
-    image: "image/sponsor/esport-agora.png",
+    image: "/image/sponsor/esport-agora.png",
   },
   PLAYCE_ESPORT: {
     name: "Playce Esport",
     slug: "playce-esport",
-    image: "image/sponsor/playce-esport.png",
+    image: "/image/sponsor/playce-esport.png",
   },
 
   DISCORD: {
     name: "Discord",
     slug: "discord",
-    image: "image/sponsor/dicord.svg",
+    image: "/image/sponsor/discord.svg",
   },
   SKEEL_APP: {
     name: "SkeelApp",
     slug: "skeel-app",
-    image: "image/sponsor/skeel-app.png",
+    image: "/image/sponsor/skeel-app.png",
   },
   MILLENIUM: {
     name: "Millenium",
     slug: "millenium ",
-    image: "image/sponsor/millenium.png",
+    image: "/image/sponsor/millenium.png",
   },
   NEWGO_ESPORT: {
     name: "NewGo Esport",
     slug: "newgo-sport",
-    image: "image/sponsor/newgo-sport.png",
+    image: "/image/sponsor/newgo-sport.png",
   },
   BUFF_ESPORT: {
     name: "Buff Esport",
     slug: "buff-sport",
-    image: "image/sponsor/buff-sport.png",
+    image: "/image/sponsor/buff-sport.png",
   },
   RTSK3D: {
     name: "RTSK3D ",
     slug: "rtsk3d",
-    image: "image/sponsor/rtsk3d.png",
+    image: "/image/sponsor/rtsk3d.png",
   },
   GAMERS_APPARELS: {
     name: "Gamers Apparels",
     slug: "gamers-apparels",
-    image: "image/sponsor/gamers-apparels.png",
+    image: "/image/sponsor/gamers-apparels.png",
   },
   CAPFINACE: {
     name: "CAP Finances",
     slug: "cap-finances",
-    image: "image/sponsor/cap-finances.png",
+    image: "/image/sponsor/cap-finances.png",
   },
   NOVICKS_STADIUM: {
     name: "Novicks Stadium",
     slug: "novicks-stadium",
-    image: "image/sponsor/novicks-stadium.png",
+    image: "/image/sponsor/novicks-stadium.png",
   },
   ROUEN_NORMANDIE_RUBGY: {
     name: "Rouen Normandie Rugby",
     slug: "rouen-normandie-rugby",
-    image: "image/sponsor/rouen-normandie-rugby.png",
+    image: "/image/sponsor/rouen-normandie-rugby.png",
   }
 }
 

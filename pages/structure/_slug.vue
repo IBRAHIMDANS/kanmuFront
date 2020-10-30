@@ -31,6 +31,14 @@
           </li>
         </ul>
       </div>
+      <div v-if="team.sponsors.length" class="block">
+        <h2 class="block-title">Sponsorsing</h2>
+        <ul class="image-list">
+          <li v-for="sponsor of team.sponsors" :v-key="sponsor.slug">
+            <img :src="sponsor.image"/>
+          </li>
+        </ul>
+      </div>
       <div v-if="false" class="block">
         <h2 class="block-title">Vous aimez cette structure ?</h2>
         <sub class="block-sub">N’hésitez pas à checker leurs réseaux sociaux !</sub>
@@ -247,9 +255,10 @@
   }
   .image-list li img{
     width:auto;
-    height:70px;
-    max-width:100px;
+    height:120px;
+    max-width:170px;
     object-fit: contain;
+    margin:0 7px;
   }
 
 
