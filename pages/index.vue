@@ -2,8 +2,8 @@
   <div>
     <Title></Title>
     <WeeklyTeam :href="'/structure/'+team.slug" :image="team.image.team" :players="team.player" :created_at="team.created_at" :name="team.name" :description="team.description"></WeeklyTeam>
-    <Propals title="Voir d’autres équipes" :data="_teams"></Propals>
-    <Propals title="Nos articles sur l'esport" :data="_articles"></Propals>
+    <Propals href="/search" more_text="Voir d’autres équipes" :data="_teams"></Propals>
+    <Propals href="/" more_text="Nos articles sur l'esport" :data="_articles"></Propals>
     <Footer></Footer>
     <Menu></Menu>
   </div>

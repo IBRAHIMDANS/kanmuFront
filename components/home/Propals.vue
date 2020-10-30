@@ -13,7 +13,7 @@
         </li>
       </ul>
       <div class="button-container">
-        <a class="more">Voir plus</a>
+        <a :href="href" class="more">{{more_text}}</a>
       </div>
     </div>
   </div>
@@ -24,7 +24,9 @@
   const Propals = {
     props: {
       data: Array,
-      title: String
+      title: String,
+      more_text: String,
+      href: String,
     }
   }
 
