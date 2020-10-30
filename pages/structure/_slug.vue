@@ -4,10 +4,10 @@
       <a href="/" class="project-title">Kanmu</a>
 
       <div class="button-container">
-        <button>Retour</button>
+        <button class="btn back" @click="back">Retour</button>
       </div>
       <div class="button-container">
-        <button>Favori</button>
+        <button :class="{'favorite-btn': true,btn: true,active: isFavoriteActive}" @click="favorite">Favori</button>
       </div>
     </div>
     <div class="right-wrapper">
@@ -50,12 +50,66 @@
       for(const team of Teams){
         if (team.slug.trim().toLowerCase() === slug){
           return {
-            team: team
+            team: team,
+            favorites: [],
           }
         }
       }
 
       return params.error({ statusCode: 404, message: 'Page not found' });
+    },
+    beforeMount(): void {
+      const favorites_json = window.localStorage.getItem("favorites");
+      if (typeof favorites_json === "string"){
+        try{
+          const favorites_data = JSON.parse(favorites_json);
+          const data = Array.isArray(favorites_data) ? favorites_data : [favorites_data];
+
+          // @ts-ignore
+          this.favorites.push(... data.filter(item => typeof item === "string" && item.toLowerCase().trim().length > 0).map(item => item.toLowerCase().trim()));
+        }catch (e) {
+
+        }
+      }
+
+      // @ts-ignore
+      this.favorites = this.favorites.filter((value, index, self) => {
+        return self.indexOf(value) === index;
+      });
+
+      // @ts-ignore
+      window.localStorage.setItem("favorites",JSON.stringify(this.favorites));
+    },
+    methods: {
+      favorite: function () {
+        const _slug = this.team.slug.trim().toLowerCase();
+
+        // @ts-ignore
+        const index = this.favorites.indexOf(_slug);
+        if (index < 0){
+          // @ts-ignore
+          this.favorites.push(_slug);
+        }else{
+          // @ts-ignore
+          this.favorites.splice(index,1);
+        }
+
+        // @ts-ignore
+        this.favorites = this.favorites.filter((value, index, self) => {
+          return self.indexOf(value) === index;
+        });
+
+        // @ts-ignore
+        window.localStorage.setItem("favorites",JSON.stringify(this.favorites));
+      },
+      back: function(){
+        this.$router.back();
+      }
+    },
+    computed: {
+      isFavoriteActive: function(){
+        return this.favorites.includes(this.team.slug);
+      },
     }
   });
 </script>
@@ -247,5 +301,50 @@
     height:2px;
     width:70%;
     content: "";
+  }
+
+
+  .button-container{
+    width:100%;
+    height:auto;
+    display:block;
+    text-align: center;
+    margin: 14px 0;
+  }
+
+  .btn{
+    width:125px;
+    height:50px;
+    outline:none;
+    border-radius:300px;
+    box-shadow: 0 3px 6px #00000029;
+    cursor: pointer;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    font-size:15px;
+    line-height:15px;
+    color:#E82746;
+    box-sizing: border-box;
+    padding:0 0 0 50px;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    background-position: left 17px top 14px;
+    text-align: left;
+    display:inline-block;
+    background-color:#fff;
+    border:0 none transparent;
+  }
+
+
+  .favorite-btn.active{
+    background-image: url("/star-active.png");
+    color:#FEC12D;
+  }
+  .favorite-btn{
+    color:#E3E9ED;
+    background-image: url("/star-disable.png");
+  }
+  .back{
+    background-image: url("/arrow-left.svg");
   }
 </style>
