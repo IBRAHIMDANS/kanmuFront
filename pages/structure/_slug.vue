@@ -82,6 +82,7 @@
     },
     methods: {
       favorite: function () {
+        // @ts-ignore
         const _slug = this.team.slug.trim().toLowerCase();
 
         // @ts-ignore
@@ -108,6 +109,7 @@
     },
     computed: {
       isFavoriteActive: function(){
+        // @ts-ignore
         return this.favorites.includes(this.team.slug);
       },
     }
