@@ -31,6 +31,13 @@
           </li>
         </ul>
       </div>
+      <div v-if="false" class="block">
+        <h2 class="block-title">Vous aimez cette structure ?</h2>
+        <sub class="block-sub">N’hésitez pas à checker leurs réseaux sociaux !</sub>
+        <ul class="image-list">
+
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -141,6 +148,7 @@
     transform: translate3d(-50%,0,0);
     background-color:#fff;
     padding:3px;
+    object-fit: contain;
   }
 
   .block{
@@ -171,6 +179,7 @@
     padding: 0;
     font-family: "Helvetica Neue", sans-serif;
     font-weight: normal;
+    white-space: break-spaces;
   }
 
   .block-sub{
@@ -217,6 +226,32 @@
     background-color: #E82746;
     display:block;
   }
+
+  .image-list{
+    width:100%;
+    height:auto;
+    padding:0;
+    margin:20px 0;
+    display:block;
+    list-style: none;
+    text-align: center;
+  }
+  .image-list li,
+  .image-list li a{
+    display:inline-block;
+    margin:0;
+    padding:0;
+    width:auto;
+    height:auto;
+    vertical-align: center;
+  }
+  .image-list li img{
+    width:auto;
+    height:70px;
+    max-width:100px;
+    object-fit: contain;
+  }
+
 
   .games{
     width:100%;
