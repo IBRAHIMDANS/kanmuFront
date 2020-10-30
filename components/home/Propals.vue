@@ -146,6 +146,11 @@ h3:after{
   padding:12px 37px 12px 22px;
   cursor:pointer;
   box-shadow: 0 3px 6px #00000029;
+
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 17px auto;
+  background-image:url("/arrow-right.svg");
 }
 
 </style>
