@@ -5,7 +5,7 @@
       <img :src="require('../assets/logo.png')" class="logo" />
       </a>
       <span v-if="!isLogged">
-        <router-link class="outline-button" to="/login">Connexion</router-link>
+        <router-link class="outline-button" to="/signup">Connexion</router-link>
         <router-link class="filled-button" to="/register">Inscription</router-link>
       </span>
 
