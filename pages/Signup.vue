@@ -7,7 +7,7 @@
     </div>
     </nav>
     <table><tr><td class="formulaire">
-    <div >
+    <div>
         <div class="form-head">
             <h1>Kanmu</h1>
             <p id="question1-txt">Prêt à participer à la révolution e-sport?</p>
