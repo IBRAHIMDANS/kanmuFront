@@ -1,5 +1,5 @@
 <template>
-  <a class="result-item" :href="'/structure/'+slug">
+  <NuxtLink class="result-item" :to="'/structure/'+slug">
     <div class="images">
       <img class="team" :src="imageTeam" />
       <img class="logo" :src="imageLogo" />
@@ -11,7 +11,7 @@
       <sub>{{ _like }} personnes aiment cette structure</sub>
       <button v-on:click="favorite" :class="{favorite: true,active: isFavoriteActive}">Favori</button>
     </div>
-  </a>
+  </NuxtLink>
 </template>
 
 <script>
@@ -72,7 +72,7 @@ export default SearchResultItem
 .result-item .images {
   width: 45%;
   height: 100%;
-  position: relative;
+  position:relative;
 }
 
 .result-item .images .team {
@@ -87,13 +87,12 @@ export default SearchResultItem
 .result-item .images .logo {
   background: #ffffff;
   position: absolute;
-  right: 0;
-  transform: translate3d(50%, -50%, 0);
+  left: 100%;
+  transform: translate3d(-50%, -50%, 0);
   top: 50%;
   width: 150px;
   height: 150px;
   padding: 15px;
-  object-fit: contain;
 }
 
 .result-item .informations .result-item-title {

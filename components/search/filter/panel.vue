@@ -1,6 +1,6 @@
 <template>
   <div class="left-wrapper">
-    <a href="/" class="project-title">Kanmu</a>
+    <NuxtLink to="/" class="project-title">Kanmu</NuxtLink>
 
     <CheckboxList
       :max="3"
@@ -26,7 +26,9 @@
   import Left from "~/components/util/Left";
 
   const LeftFilterPanel = {
-    components: [Left],
+    components: {
+      Left
+    },
     props: {
       locations: Array,
       games: Array,

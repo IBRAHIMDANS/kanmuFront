@@ -178,9 +178,9 @@ export default Vue.extend({
     };
   },
   components: {
-    LeftFilterPanel: LeftFilterPanel,
-    SearchResult: SearchResult,
-    SearchHeader: SearchHeader
+    LeftFilterPanel,
+    SearchResult,
+    SearchHeader
   },
   methods: {
     favorite: function (slug) {

@@ -14,7 +14,7 @@
       </ul>
 
       <div class="button-container">
-        <a class="button" :href="href" >En savoir plus</a>
+        <NuxtLink class="button" :to="href" >En savoir plus</NuxtLink>
       </div>
     </div>
   </div>
@@ -35,8 +35,6 @@
     computed: {
       date: function(){
         const diff = (Date.now() - this.created_at.getTime()) / 1000;
-
-        console.log(Date.now(),this.created_at.getTime(),diff);
 
         if (diff > 31557600){
           return Math.floor(diff / 31557600)+" ans"

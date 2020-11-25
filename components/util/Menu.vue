@@ -1,8 +1,10 @@
 <template>
   <nav class="menu">
     <div class="menu-container">
-      <img :src="require('../../assets/logo.png')" class="logo"/>
-      <router-link class="filled-button" to="/search">Allez sur la plateforme</router-link>
+      <a href="/" class="logo">
+        <img :src="require('../../assets/logo.png')"/>
+      </a>
+      <slot></slot>
     </div>
   </nav>
 </template>
@@ -30,33 +32,7 @@
   align-items: flex-end;
   justify-content: flex-end;
   position:relative;
-}
-
-.filled-button,
-.outline-button{
-  min-width:150px;
-  height:auto;
-  width:auto;
-  border-radius:36px;
-  box-shadow: rgba(0,0,0,0.16) 0 3px 6px;
-  text-align: center;
-  line-height:17px;
-  font-size:14px;
-  margin:15px;
-  box-sizing: border-box;
-  text-transform: uppercase;
-  padding:13px 14px;
-  text-decoration: none;
-  font-family: "Helvetica Neue",sans-serif;
-  font-weight: normal;
-}
-
-.outline-button{
-  color:#E82746;
-}
-.filled-button{
-  background-color:#E82746;
-  color: rgb(255,255,255);
+  min-height: 60px;
 }
 
 .logo{
@@ -68,8 +44,16 @@
   left:0;
   top:0;
 }
+.logo img{
+  object-fit: contain;
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+}
 
 body{
-  padding-top:146px;
+  padding-top:100px;
 }
 </style>

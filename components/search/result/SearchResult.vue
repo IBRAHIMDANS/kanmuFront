@@ -18,7 +18,9 @@
 import SearchResultItem from './SearchResultItem'
 
 const SearchResult = {
-  components: [SearchResultItem],
+  components: {
+    SearchResultItem
+  },
   props: {
     favorites: Array,
     data: Array,

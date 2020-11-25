@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="left-wrapper">
-      <a href="/" class="project-title">Kanmu</a>
+      <NuxtLink to="/" class="project-title">Kanmu</NuxtLink >
 
       <div class="button-container">
         <button class="btn back" @click="back">Retour</button>
@@ -27,7 +27,7 @@
         <sub class="block-sub">L’équipe {{team.name}} est présente sous ces différents jeux vidéos e-sport :</sub>
         <ul class="games">
           <li v-for="game of team.games" :v-key="game.slug">
-            <a :href="'/search?game='+game.slug">{{ game.name }}</a>
+            <NuxtLink :to="'/search?game='+game.slug">{{ game.name }}</NuxtLink>
           </li>
         </ul>
       </div>

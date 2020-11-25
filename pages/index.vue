@@ -5,7 +5,10 @@
     <Propals href="/search" more_text="Voir d’autres équipes" :data="_teams"></Propals>
     <Propals href="/" more_text="Nos articles sur l'esport" :data="_articles"></Propals>
     <Footer></Footer>
-    <Menu></Menu>
+    <Menu>
+      <Button href="/login">Connexion</Button>
+      <Button filled href="/register">Inscription</Button>
+    </Menu>
   </div>
 </template>
 
@@ -19,6 +22,7 @@
   import Footer from '~/components/util/Footer.vue'
   // @ts-ignore
   import Menu from '~/components/util/Menu.vue'
+  import Button from '~/components/util/button.vue'
   import Teams from "~/static/teams";
   import Articles from "~/static/articles";
 
@@ -39,6 +43,7 @@
     },
     components: {
       WeeklyTeam,
+      Button,
       Propals,
       Footer,
       Menu,

@@ -6,7 +6,7 @@
     </div>
     <div class="favorite">
       <span class="text">Favori: </span>
-      <a v-for="team of _teams" :v-key="team.slug" class="item" :href="'/structure/'+team.slug">{{ team.name }}</a>
+      <NuxtLink v-for="team of _teams" :v-key="team.slug" class="item" :to="'/structure/'+team.slug">{{ team.name }}</NuxtLink>
     </div>
   </header>
 </template>
