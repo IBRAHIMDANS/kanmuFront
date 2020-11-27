@@ -34,6 +34,11 @@ type Sponsor = {
 }
 
 const SPONSOR = {
+  ARMAGG : {
+    name: "ArmaGG",
+    slug: "armagg",
+    image: "/image/sponsor/armagg.png",
+  },
   LMN8: {
     name: "LMN8",
     slug: "lmn8",
@@ -116,6 +121,10 @@ const REGION = {
   LOIRE: {
     name: "Val de Loire",
     slug: "val-de-loire"
+  },
+  PROVENCE_ALPES_COTE_AZUR: {
+    name: "Provence-Alpes-Côte d'Azur",
+    slug: "provence-alpes-cote-d-azur"
   }
 };
 const COUNTRY = {
@@ -180,6 +189,14 @@ const GAME = {
   ROCKET_LEAGUE: {
     name: "Rocket League",
     slug: "rocket-league",
+  },
+  CALL_OF_DUTY: {
+    name: "Call Of Duty",
+    slug: "call-of-duty",
+  },
+  PES: {
+    name: "PES",
+    slug: "pes",
   }
 };
 
@@ -204,6 +221,51 @@ export type Team = {
 };
 
 const Teams: Team[] = [
+  {
+    image: {
+      team: "/image/team/9I6.png",
+      logo: "/image/logo/9I6.jpg"
+    },
+    created_at: new Date(2019,8,30),
+    slug: "9I6",
+    name: "9I6",
+    description: "Nous sommes une association sous loi 1901 dont le projet a débuté il y a 2 ans, nous sommes motivés à atteindre le plus haut, l'eSport est un milieu mal exploré et nous nous efforçons de continuer à développer notre projet aux côtés de cette activité. Nous avons pour projet tout d'abord de faire évoluer tout les membres de l'association, ensuite de faire évoluer le projet au plus haut niveau et d'exceller dans la matière.",
+    like: 39261,
+    player: 25,
+    games: [
+      GAME.FORTNITE,
+      GAME.CALL_OF_DUTY
+    ],
+    region: REGION.PROVENCE_ALPES_COTE_AZUR,
+    country: COUNTRY.FRANCE,
+    department: DEPARTMENT.LANDES,
+    continent: CONTINENT.EUROPE,
+    sponsors: [
+      SPONSOR.ARMAGG
+    ],
+  },
+  {
+    image: {
+      team: "/image/team/galatics-esport.jpg",
+      logo: "/image/logo/galatics-esport.png"
+    },
+    created_at: new Date(2015,0,0),
+    slug: "galatics-esport",
+    name: "Galatics Esport",
+    description: "Nous sommes présents dans le paysage eSport français depuis plusieurs années avec pour but dans un premier temps de contribuer au développement de l'eSport à travers la pratique régulière des joueurs lors d'entraînements, de tournois en ligne ainsi que tournois physiques. Depuis deux ans maintenant nous avons réussis à nous faire une place sur la scène compétitive League of Legends notamment et nous souhaitons tout mettre en oeuvre pour nous professionnaliser grâce à l'encadrement et au développement qualitatif que nous proposons aux joueurs. Nous avons besoin du soutient des entreprises ou des ou des collectivités territoriales pour pouvoir y parvenir.",
+    like: 39261,
+    player: 25,
+    games: [
+      GAME.LEAGUE_OF_LEGEND,
+      GAME.TEAMFIGHT_TACTICS,
+      GAME.PES
+    ],
+    region: REGION.PROVENCE_ALPES_COTE_AZUR,
+    country: COUNTRY.FRANCE,
+    department: DEPARTMENT.LANDES,
+    continent: CONTINENT.EUROPE,
+    sponsors: [],
+  },
   {
     image: {
       team: "/image/team/mkdf-entertainment.jpg",
