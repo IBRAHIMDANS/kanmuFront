@@ -1,6 +1,6 @@
 <template>
   <Section>
-    <div class="header section screen-size bg-black">
+    <div class="header section screen-size bg-black triangle-bottom">
       <Grid fill-height>
         <Column vertical-align width="6">
           <Title type="big">Mensarum enim voragines et varias</Title>
@@ -12,10 +12,10 @@
         </Column>
       </Grid>
     </div>
-    <Section color="white" padding-bottom padding-top>
+    <Section color="white" padding-bottom padding-top triangle-top="normal">
       <Steps :steps="STEPS"/>
     </Section>
-    <Section color="black" padding-bottom padding-top>
+    <Section color="black" padding-bottom padding-top triangle-bottom>
       <Grid fill-height>
         <Column vertical-align width="6" padding-right>
           <Title>Regna occupatam Euphratis vero limes</Title>
@@ -51,7 +51,7 @@
         </Column>
       </Grid>
     </Section>
-    <Section color="grey"  padding-bottom padding-top>
+    <Section color="grey"  padding-bottom padding-top triangle-top="normal">
       <Grid fill-height>
         <Column vertical-align width="6" padding-right>
             <Title>Donner à votre marque la visibilité qu’elle mérite</Title>

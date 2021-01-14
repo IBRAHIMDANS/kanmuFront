@@ -26,12 +26,12 @@ const Menu = {
   },
   methods: {
     updateScroll(){
-      if ((this._scroll - window.scrollY) > 0 || window.scrollY <= 0){
+      if ((this._scroll - window.scrollY) > 0 || window.scrollY <= 600){
         this.offset = window.scrollY;
       }
 
       this.position = window.scrollY - this.offset;
-      this.opacity = Math.min(window.scrollY / window.innerHeight,1);
+      this.opacity = Math.min(window.scrollY / 400,1);
 
       this._scroll = window.scrollY;
     }

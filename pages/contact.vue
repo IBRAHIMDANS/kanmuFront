@@ -1,6 +1,6 @@
 <template>
   <Section>
-    <Section black="black" padding-top padding-bottom>
+    <Section black="black" big-padding-top big-padding-bottom>
       <Grid>
         <Column width="6">
           <Title type="big">Nous sommes, A votre écoute</Title>

@@ -6,27 +6,76 @@ header,
   display:block;
   position:relative;
   text-align: center;
+
+  &.inverted-triangle-top:before{
+    transform: scale3d(-1,1,1);
+  }
+
+  &.triangle-top:before,
+  &.inverted-triangle-top:before{
+    position:absolute;
+    left:0;
+    bottom:100%;
+    height:70px;
+    width:100%;
+    content:"";
+    display:block;
+    background-image: url(../assets/triangle-white.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &.triangle-bottom{
+    padding-bottom: 70px;
+    &.padding-bottom{
+      padding-bottom:50px + 70px;
+    }
+    &.big-padding-bottom{
+      padding-bottom:150px + 70px;
+    }
+  }
+
+  &.padding-top{
+    padding-top:50px;
+  }
+  &.padding-bottom{
+    padding-bottom:50px;
+  }
+  &.big-padding-top{
+    padding-top:150px;
+  }
+  &.big-padding-bottom{
+    padding-bottom:150px;
+  }
+
+  &.screen-size{
+    height:100vh;
+  }
 }
-.padding-top{
-  padding-top:50px;
-}
-.padding-bottom{
-  padding-bottom:50px;
-}
-.screen-size{
-  height:100vh;
-}
+
+
 .bg-white{
   background-color: $color_white;
   color:$color_black;
+  &.triangle-top:before{
+    background-image: url(../assets/triangle-white.svg);
+  }
 }
 .bg-black{
   background-color: $color_black;
   color:$color_white;
+  &.triangle-top:before{
+    background-image: url(../assets/triangle-black.svg);
+  }
 }
 .bg-grey{
   background-color: $color_grey;
   color:$color_black;
+
+  &.triangle-top:before{
+    background-image: url(../assets/triangle-grey.svg);
+  }
 }
 
 .padding-left{
