@@ -56,8 +56,8 @@ nav{
       transition:0.3s 0s transform;
     }
 
-    li.focus:after,
-    li:hover:after{
+    li:not(.no-bar).focus:after,
+    li:not(.no-bar):hover:after{
       transform: translate3d(-50%,-50%,0) scale3d(1,1,1);
     }
 

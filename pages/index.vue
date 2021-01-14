@@ -128,7 +128,7 @@
         <li><a>Contacts</a></li>
       </LeftList>
       <RightList>
-        <li><a class="button primary-button">Mon compte</a></li>
+        <li class="no-bar"><a class="button primary-button">Mon compte</a></li>
       </RightList>
     </Menu>
     <Footer>

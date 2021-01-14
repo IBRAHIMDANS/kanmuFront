@@ -1,5 +1,12 @@
 <template>
   <Section>
+    <Section black="black" padding-top padding-bottom>
+      <Grid>
+        <Column width="6">
+          <Title type="big">Nous sommes, A votre écoute</Title>
+        </Column>
+      </Grid>
+    </Section>
     <Menu>
       <LeftList>
         <li class="right-space"><a>KAMNU</a></li>
@@ -51,6 +58,9 @@
       Menu,
       Footer,
       Section,
+      Grid,
+      Column,
+      Title,
     },
     data(){
       return {
