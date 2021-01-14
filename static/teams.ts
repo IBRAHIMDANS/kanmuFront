@@ -34,6 +34,26 @@ type Sponsor = {
 }
 
 const SPONSOR = {
+  IIM: {
+    name: "IIM",
+    slug: "iim",
+    image: "/image/sponsor/iim.jpg",
+  },
+  EVERCUT_GAMING: {
+    name: "Evercut Gaming",
+    slug: "evercut-gaming",
+    image: "/image/sponsor/evercut-gaming.png",
+  },
+  AGENCE_BACKGROUND: {
+    name: "Agence Background",
+    slug: "agence-background",
+    image: "/image/sponsor/agence-background.png",
+  },
+  VALORANT: {
+    name: "Valorant France",
+    slug: "valorant-france",
+    image: "/image/sponsor/valorant.png",
+  },
   ARMAGG : {
     name: "ArmaGG",
     slug: "armagg",
@@ -115,9 +135,17 @@ const DEPARTMENT = {
   GUADELOUPE: {
     name: "Guadeloupe",
     slug: "guadeloupe"
+  },
+  COURBEVOIE: {
+    name: "Courbevoie",
+    slug: "courbevoie"
   }
 };
 const REGION = {
+  ILE_DE_FRANCE: {
+    name: "Île de France",
+    slug: "ile-de-france"
+  },
   LOIRE: {
     name: "Val de Loire",
     slug: "val-de-loire"
@@ -246,6 +274,32 @@ const Teams: Team[] = [
   },
   {
     image: {
+      team: "/image/team/ldv-esport.png",
+      logo: "/image/logo/ldv-esport.png"
+    },
+    created_at: new Date(2018,10,10),
+    slug: "ldv-esport",
+    name: "LDV Esport",
+    description: "LDV Esport est une section esportive fondée en août 2016. Depuis 2018 nous sommes une association loi 1901. Elle fonctionne main dans la main avec le pôle universitaire Léonard De Vinci, qui regroupe des étudiants de trois écoles : l’ESILV, l’IIM ainsi que l’EMLV. Elle profite donc d’un environnement riche avec des joueurs de plusieurs horizons. L’esport au Pôle Léonard de Vinci est considéré comme un sport à part entière auquel les étudiants peuvent s’inscrire dès la rentrée. Afin d’accompagner les joueurs au plus haut niveau, nous recrutons des coachs, des managers mais aussi tout un environnement de staff qui aide au fleurissement de la structure. Nos étudiants s’investissent dans la communication des événements, l’organisation de ces derniers, mais aussi dans tout l’aspect graphique que nous mettons en avant. Nous sommes aussi présents en live sur Twitch avec une équipe d’animateurs et de commentateurs. Précurseur dans le domaine, LDV Esport n’est pas seulement la structure d’une équipe étudiante, mais bel et bien un écosystème à part entière qui veut rayonner sur la scène française et étrangère étudiante.",
+    like: 58921,
+    player: 144,
+    games: [
+      GAME.FORTNITE,
+      GAME.LEAGUE_OF_LEGEND
+    ],
+    region: REGION.ILE_DE_FRANCE,
+    country: COUNTRY.FRANCE,
+    department: DEPARTMENT.COURBEVOIE,
+    continent: CONTINENT.EUROPE,
+    sponsors: [
+      SPONSOR.IIM,
+      SPONSOR.EVERCUT_GAMING,
+      SPONSOR.AGENCE_BACKGROUND,
+      SPONSOR.VALORANT,
+    ],
+  },
+  {
+    image: {
       team: "/image/team/galatics-esport.jpg",
       logo: "/image/logo/galatics-esport.png"
     },
@@ -363,7 +417,7 @@ const Teams: Team[] = [
   },
   {
     image: {
-      team: "/image/team/asptt-rouen-e-sport.png",
+      team: "/image/team/asptt-rouen-e-sport.jpg",
       logo: "/image/logo/asptt-rouen-e-sport.png"
     },
     created_at: new Date(2020,0),

@@ -113,6 +113,9 @@
           </div>
           <Title type="small" align="center">Ils nous soutiennent</Title>
           <p class="paragraph">Marque comme équipe nous souhaitons vous accompagner dans votre aventure dans le milieu de l’esport ! Alors n’hésitez pas à prendre contact directement avec nous, nous répondrons au mieux à vos questions par mail ou par téléphone !</p>
+          <ButtonContainer align="center">
+            <Button primary>Contactez-nous</Button>
+          </ButtonContainer>
         </div>
       </Grid>
     </Section>
