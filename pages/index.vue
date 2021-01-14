@@ -6,8 +6,8 @@
           <Title type="big">Mensarum enim voragines et varias</Title>
           <Paragraph>Kanmu vous présente la première plateforme de mise en relation direct entre Equipes et Marques une solution Saaq complète qui centralise.</Paragraph>
           <ButtonContainer>
-            <Button primary="true">J'inscris ma marque</Button>
-            <Button>J'inscris mon équipe</Button>
+            <Button primary big>J'inscris ma marque</Button>
+            <Button big>J'inscris mon équipe</Button>
           </ButtonContainer>
         </Column>
       </Grid>
@@ -21,7 +21,7 @@
           <Title>Regna occupatam Euphratis vero limes</Title>
           <Paragraph quote>«In his tractibus navigerum nusquam visitur flumen sed in locis plurimis aquae suapte natura calentes emergunt ad usus aptae multiplicium medelarum. verum has quoque regiones pari sorte Pompeius Iudaeis domitis et Hierosolymis captis in provinciae speciem dictione.»</Paragraph>
           <ButtonContainer>
-            <Button primary="true">J'inscris mon équipe</Button>
+            <Button primary big>J'inscris mon équipe</Button>
           </ButtonContainer>
         </Column>
         <Column vertical-align width="6" padding-left>
@@ -57,10 +57,10 @@
             <Title>Donner à votre marque la visibilité qu’elle mérite</Title>
             <Paragraph>Pour créer cette solution nous avons été directement en contact avec différentes associations esportive pour comprendre et répondre à vos besoins. Kanmu vous permettra de donner de la visibilité en ligne à votre structure et de trouver des sponsors pour vous permettre de participer aux différentes compétitions.</Paragraph>
             <ButtonContainer>
-              <Link primary="true">En savoir plus</Link>
+              <Link primary>En savoir plus</Link>
             </ButtonContainer>
             <ButtonContainer>
-              <Button primary="true">J'inscris mon équipe</Button>
+              <Button primary big>J'inscris mon équipe</Button>
             </ButtonContainer>
         </Column>
         <Column vertical-align width="6" padding-left>
@@ -94,10 +94,10 @@
             </div>
           </div>
           <ButtonContainer>
-            <Link primary="true">En savoir plus</Link>
+            <Link primary>En savoir plus</Link>
           </ButtonContainer>
           <ButtonContainer>
-            <Button primary="true">J'inscris mon équipe</Button>
+            <Button primary big>J'inscris mon équipe</Button>
           </ButtonContainer>
         </Column>
       </Grid>
@@ -114,7 +114,7 @@
           <Title type="small" align="center">Ils nous soutiennent</Title>
           <p class="paragraph">Marque comme équipe nous souhaitons vous accompagner dans votre aventure dans le milieu de l’esport ! Alors n’hésitez pas à prendre contact directement avec nous, nous répondrons au mieux à vos questions par mail ou par téléphone !</p>
           <ButtonContainer align="center">
-            <Button primary>Contactez-nous</Button>
+            <Button primary big>Contactez-nous</Button>
           </ButtonContainer>
         </div>
       </Grid>

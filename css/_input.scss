@@ -1,0 +1,97 @@
+.input{
+  margin:30px 0;
+  .textarea,
+  .textarea .placeholder,
+  .textarea .value,
+  .inline,
+  input,
+  .error,
+  label{
+    display:block;
+    height:auto;
+    width:100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: normal;
+    line-height: 22px;
+    font-size: 16px;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  .textarea{
+    position: relative;
+    .placeholder{
+      position: absolute;
+      left:0;
+      top:0;
+      pointer-events: none;
+      display:none;
+    }
+    .placeholder,
+    .value{
+      min-height:80px;
+      outline: none;
+    }
+  }
+
+  .textarea,
+  input{
+    margin:15px 0;
+    border-bottom:1px solid $color_black;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  input,
+  .textarea .value,
+  .textarea .placeholder{
+    padding:7px 3px;
+  }
+
+  label{
+    margin:3px 0 15px 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .inline{
+    display:flex;
+    justify-content: stretch;
+    align-content: center;
+    align-items: center;
+
+    label{
+      width:auto;
+      margin:0 20px 0 0;
+    }
+  }
+
+
+
+  &.placeholder{
+    .textarea,
+    .textarea,
+    input{
+      border-bottom:1px dashed #707070;
+    }
+
+    .textarea .placeholder,
+    .textarea,
+    input,
+    input::placeholder{
+      color:#707070;
+    }
+
+    .textarea .placeholder{
+      display:block;
+    }
+  }
+  &.focused{
+    .textarea,
+    input{
+      border-bottom:1px solid $color_gold;
+    }
+  }
+}

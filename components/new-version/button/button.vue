@@ -2,6 +2,7 @@
   <button :class="{
     button: true,
     'primary-button': this.primary,
+    'big': this.big,
   }">
     <slot/>
   </button>
@@ -12,6 +13,10 @@ const Button = {
   inheritAttrs: false,
   props: {
     primary: {
+      default: false,
+      type: Boolean
+    },
+    big: {
       default: false,
       type: Boolean
     },

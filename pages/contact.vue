@@ -1,9 +1,30 @@
 <template>
   <Section>
-    <Section black="black" big-padding-top big-padding-bottom>
+    <Section color="black" big-padding-top big-padding-bottom triangle-bottom>
       <Grid>
         <Column width="6">
           <Title type="big">Nous sommes, A votre écoute</Title>
+        </Column>
+      </Grid>
+    </Section>
+    <Section triangle-top="normal" padding-bottom padding-top>
+      <Grid>
+        <Column width="6">
+          <Paragraph bold>N'hésitez pas à nous écrire ou nous appeler :</Paragraph>
+          <Paragraph no-margin>Email : email@esport-kanmu.com</Paragraph>
+          <Paragraph no-margin>Tel : 06 40 55 67 87</Paragraph>
+        </Column>
+        <Column width="6">
+          <form>
+            <Input name="name" :value="name" @change="updateName" placeholder="Votre nom et prénom" label="Bonjour, je m'appelle"/>
+            <Input name="subject" :value="subject" @change="updateSubject" placeholder="Votre sujet" label="J'aimerai beaucoup"/>
+            <Input type="plain" name="message" :value="message" @change="updateMessage" placeholder="Votre message" label="Voici quelques informations supplémentaires à ce propos (facultatif) :"/>
+            <Input name="email" :value="email" type="email" @change="updateEmail" placeholder="name@exemple.com" label="Vous pouvez me contacter à cette adresse :"/>
+            <Input name="phone" inline :value="phone" type="tel" @change="updatePhone" placeholder="+33 6 XX XX XX XX" label="Ou à ce numéro: "/>
+            <ButtonContainer>
+              <Button big primary>Être re-contacter</Button>
+            </ButtonContainer>
+          </form>
         </Column>
       </Grid>
     </Section>
@@ -43,7 +64,7 @@
   import RightList from '../components/new-version/util/right-list.vue'
   import Title from '../components/new-version/title.vue'
   import ButtonContainer from '../components/new-version/button/container.vue'
-  import Link from '../components/new-version/button/link.vue'
+  import Input from '../components/new-version/input.vue'
   import Button from '../components/new-version/button/button.vue'
   import Section from '../components/new-version/section.vue'
   import Paragraph from '../components/new-version/paragraph.vue'
@@ -53,6 +74,10 @@
 
   export default Vue.extend({
     components: {
+      Input,
+      Button,
+      ButtonContainer,
+      Paragraph,
       LeftList,
       RightList,
       Menu,
@@ -64,12 +89,29 @@
     },
     data(){
       return {
-        STEPS: [
-          {title: 'Inscription',description: 'Quae dum ita struunt, indicatum est apudap'},
-          {title: 'Matching optimisé',description: 'Quae dum ita struunt, indicatum est apudap'},
-          {title: 'Mise en relation',description: 'Quae dum ita struunt, indicatum est apudap'},
-          {title: 'Signature de contrat',description: 'Quae dum ita struunt, indicatum est apudap'},
-        ]
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        subject: "",
+      }
+    },
+    methods: {
+      updateName: function(value){
+        this.name = value;
+      },
+      updateSubject: function(value){
+        this.subject = value;
+      },
+      updateMessage: function(value){
+        console.log(value);
+        this.message = value;
+      },
+      updatePhone: function(value){
+        this.phone = value;
+      },
+      updateEmail: function(value){
+        this.email = value;
       }
     }
   })

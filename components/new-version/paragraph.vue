@@ -5,6 +5,8 @@
     'align-center': this.align === 'center',
     'align-right': this.align === 'right',
     'border-paragraph': this.quote,
+    'no-margin': this.noMargin,
+    'bold': this.bold,
   }">
     <slot/>
   </p>
@@ -18,6 +20,14 @@ const Paragraph = {
       type: String
     },
     quote: {
+      default: false,
+      type: Boolean
+    },
+    noMargin: {
+      default: false,
+      type: Boolean
+    },
+    bold: {
       default: false,
       type: Boolean
     },
