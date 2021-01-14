@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="older">
     <div class="right-wrapper">
       <SearchHeader :favorites="favorites" :teams="teams" :search="search" @update="change_search"/>
       <SearchResult @favorite="favorite" :favorites="favorites" :data="teams"/>
@@ -259,15 +259,3 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style>
-  .right-wrapper {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: auto;
-    width: calc(100% - 340px);
-    padding: 20px 0;
-    box-sizing: border-box;
-  }
-</style>

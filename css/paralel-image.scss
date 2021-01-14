@@ -1,0 +1,12 @@
+.parallel-images img{
+  width:40%;
+  height:calc(100% - 50px);
+  margin:0 11px;
+  display:inline-block;
+  object-fit: cover;
+  object-position: center;
+  vertical-align:top;
+}
+.parallel-images img:nth-child(2n+1){
+  margin-top:50px;
+}

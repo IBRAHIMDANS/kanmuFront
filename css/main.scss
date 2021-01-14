@@ -1,0 +1,29 @@
+@import "variables";
+@import "default";
+@import "grid";
+@import "section";
+@import "nav";
+@import "sponsor";
+@import "footer";
+@import "button";
+@import "title";
+@import "paragraph";
+@import "vertical-align";
+@import "statistic";
+@import "step";
+@import "paralel-image";
+@import "modifier";
+@import "./older/main";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+.header{
+  background-image: url(../assets/header-mask.png),url(../assets/esport.png);
+  background-position: center,right;
+  background-size: cover;
+  background-color: #000;
+}
+
+
+
+

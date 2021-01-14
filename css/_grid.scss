@@ -1,0 +1,63 @@
+.columns-container{
+  width:$container;
+  max-width:calc(100% + 16px);
+  height:auto;
+  display:inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: start;
+  justify-content: start;
+}
+.columns-container.section{
+  display:flex;
+}
+
+@function grid($number){
+  $_grid_width:(($container - ($grid_margin * ($grid_size - 1))) / $grid_size) / $container * 100%;
+  $_grid_margin:$grid_margin / $container * 100%;
+
+  @return $number * $_grid_width + ($_grid_margin * ($number - 1));
+}
+
+
+
+.column-12,
+.column-11,
+.column-10,
+.column-9,
+.column-8,
+.column-7,
+.column-6,
+.column-5,
+.column-4,
+.column-3,
+.column-2,
+.column-1{
+  height:auto;
+  margin:0 100% * ($grid_margin / $container);
+  padding:0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: center;
+}
+.column-1{
+  width: grid(1);
+}
+.column-2{
+  width: grid(2);
+}
+.column-3{
+  width: grid(3);
+}
+.column-4{
+  width: grid(4);
+}
+.column-5{
+  width: grid(5);
+}
+.column-6{
+  width: grid(6);
+}
+.column-12{
+  width: grid(12);
+}

@@ -1,0 +1,40 @@
+.step{
+  margin-top:20px;
+  margin-bottom:45px;
+  padding-left:52px;
+  position: relative;
+}
+.step .title{
+  width:100%;
+  height:auto;
+  text-align: left;
+  display:block;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 20px;
+  color:#000;
+}
+.step .description{
+  width:100%;
+  height:auto;
+  text-align: left;
+  display:block;
+  margin: 5px 0 0 0;
+  padding: 0;
+  color:#707070;
+  font-size: 16px;
+  line-height: 20px;
+}
+.step .number{
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:40px;
+  text-align:center;
+  vertical-align: center;
+  line-height: 1;
+  color:#D8A929;
+  font-size:70px;
+}

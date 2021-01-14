@@ -67,7 +67,7 @@ h3:after{
   background-color:#E82746;
 }
 
-
+/*
 .sponsors-container{
   padding: 0;
   margin:60px 0 120px 0;
@@ -133,6 +133,7 @@ h3:after{
   padding:17px 15px;
   box-sizing:border-box;
 }
+*/
 
 .button-container{
   width:100%;

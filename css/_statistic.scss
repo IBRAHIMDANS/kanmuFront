@@ -1,0 +1,55 @@
+.statistic-container{
+  margin:18px 0;
+}
+
+.statistic .label,
+.statistic .value{
+  width:100%;
+  height:auto;
+  display:block;
+  text-align: left;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.statistic .value{
+  color:#D8A929;
+  line-height: 24px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.statistic .label{
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+
+
+
+.bar-statistic{
+  height:400px;
+  width:85px;
+  max-width:100%;
+  display:inline-block;
+  position:relative;
+  background-image:linear-gradient(90deg,#FFFFFF53 0%,#FFFFFF53 50%,#000000 50%);
+
+  .bar-value{
+    width:100%;
+    position:absolute;
+    left:0;
+    bottom:0;
+    background-image:linear-gradient(90deg,#E6BC2C 0%,#E6BC2C 50%,#FCA706B3 50%);
+
+    .value{
+      width:100%;
+      position:absolute;
+      left:0;
+      bottom:100%;
+      font-size: 35px;
+      line-height: 55px;
+      text-align:left;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: bold;
+    }
+  }
+}

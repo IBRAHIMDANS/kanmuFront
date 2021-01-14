@@ -1,0 +1,48 @@
+.link{
+  padding:2px 8px;
+  width:auto;
+  height:auto;
+  line-height: 24px;
+  font-size:16px;
+  display: inline-block;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: normal;
+  text-decoration: underline;
+}
+.primary-link{
+  color:#D8A929;
+}
+
+.button{
+  padding:8px 41px 8px 14px;
+  width:auto;
+  height:auto;
+  line-height: 24px;
+  font-size:16px;
+  border-radius:30px;
+  color:#D8A929;
+  background-color: #ffffff;
+  display: inline-block;
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 18px auto;
+  background-image: url(../assets/arrow-gold.svg);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: normal;
+}
+
+.buttons-margin:not(:last-child){
+  margin-bottom:20px;
+}
+.buttons-margin:not(:first-child){
+  margin-top:20px;
+}
+.link:not(:first-child),
+.button:not(:first-child){
+  margin:0 16px;
+}
+.primary-button{
+  background-color: #D8A929;
+  color: #ffffff;
+  background-image: url(../assets/arrow-white.svg);
+}

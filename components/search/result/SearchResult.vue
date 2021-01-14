@@ -33,13 +33,3 @@ const SearchResult = {
 
 export default SearchResult
 </script>
-
-<style>
-.line {
-  width: 100%;
-  height: auto;
-  display: block;
-  padding:0 50px;
-  box-sizing:border-box;
-}
-</style>

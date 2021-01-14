@@ -34,6 +34,7 @@
 </template>
 
 <style>
+/*
 footer{
   display:flex;
   justify-content: stretch;
@@ -154,5 +155,5 @@ footer .list li a.twitter-icon{
 footer .list li a.medium-icon{
   background-image: url("../../assets/icon/social/medium.png");
 }
-
+*/
 </style>

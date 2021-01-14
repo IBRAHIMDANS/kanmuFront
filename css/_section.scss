@@ -1,0 +1,31 @@
+footer,
+section,
+header,
+.section{
+  width:100%;
+  display:block;
+  position:relative;
+  text-align: center;
+}
+.screen-size{
+  height:100vh;
+}
+.bg-white{
+  background-color: $color_white;
+  color:$color_black;
+}
+.bg-black{
+  background-color: $color_black;
+  color:$color_white;
+}
+.bg-grey{
+  background-color: $color_grey;
+  color:$color_black;
+}
+
+.padding-left{
+  padding-left:25px;
+}
+.padding-right{
+  padding-left:25px;
+}
