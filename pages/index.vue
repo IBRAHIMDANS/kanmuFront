@@ -12,10 +12,10 @@
         </Column>
       </Grid>
     </div>
-    <Section color="white">
+    <Section color="white" padding-bottom padding-top>
       <Steps :steps="STEPS"/>
     </Section>
-    <Section color="black">
+    <Section color="black" padding-bottom padding-top>
       <Grid fill-height>
         <Column vertical-align width="6" padding-right>
           <Title>Regna occupatam Euphratis vero limes</Title>
@@ -51,7 +51,7 @@
         </Column>
       </Grid>
     </Section>
-    <Section color="grey" screen>
+    <Section color="grey"  padding-bottom padding-top>
       <Grid fill-height>
         <Column vertical-align width="6" padding-right>
             <Title>Donner à votre marque la visibilité qu’elle mérite</Title>
@@ -71,7 +71,7 @@
         </Column>
       </Grid>
     </Section>
-    <Section color="white" screen>
+    <Section color="white"  padding-bottom padding-top>
       <Grid fill-height>
         <Column vertical-align width="6" padding-right>
           <img class="vertical-center" src="../assets/team.png"/>
@@ -102,7 +102,7 @@
         </Column>
       </Grid>
     </Section>
-    <Section color="grey">
+    <Section color="grey" padding-bottom padding-top>
       <Grid>
         <div class="column-12">
           <Title type="small" align="center">Ils nous soutiennent</Title>
