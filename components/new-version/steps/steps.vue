@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 import {PropType} from "vue";
-import Step from "./step";
+import Step from "./step.vue";
 
 type TypeStep = {
   title: string,
@@ -14,6 +14,9 @@ type TypeStep = {
 }
 
 const Steps = {
+  components: {
+    Step
+  },
   props: {
     steps: Array as PropType<TypeStep[]>
   }
