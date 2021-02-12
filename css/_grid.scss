@@ -1,63 +1,91 @@
-.columns-container{
+$columns: 12;
+
+.grid{
   width:$container;
-  max-width:calc(100% + 16px);
+  max-width:100%;
+  grid-gap: 0;
   height:auto;
-  display:inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: start;
-  justify-content: start;
+  display:inline-grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-auto-rows: minmax(auto,100%);
+  justify-content: stretch;
+  align-content: flex-start;
+  align-items: flex-start;
+
+  &.horizontal-left{
+    align-content: flex-start;
+  }
+  &.horizontal-center{
+    align-content: space-around;
+  }
+  &.horizontal-right{
+    align-content: flex-end;
+  }
+
+  &.vertical-top{
+    justify-content: flex-start;
+  }
+  &.vertical-center{
+    justify-content: space-around;
+    align-items: center;
+  }
+  &.vertical-bottom{
+    justify-content: flex-end;
+  }
+
+  &.fill-height{
+    min-height:100%;
+  }
+  &.screen-height{
+    min-height:100vh;
+  }
+
+  &.horizontal-gap-50{
+    column-gap: 50px;
+  }
+  &.horizontal-gap-16{
+    column-gap: 16px;
+  }
+
+  &.section{
+    display:grid;
+  }
+
+  > * {
+    grid-column: span 12;
+  }
 }
-.columns-container.section{
-  display:flex;
-}
 
-@function grid($number){
-  $_grid_width:(($container - ($grid_margin * ($grid_size - 1))) / $grid_size) / $container * 100%;
-  $_grid_margin:$grid_margin / $container * 100%;
-
-  @return $number * $_grid_width + ($_grid_margin * ($number - 1));
-}
-
-
-
-.column-12,
-.column-11,
-.column-10,
-.column-9,
-.column-8,
-.column-7,
-.column-6,
-.column-5,
-.column-4,
-.column-3,
-.column-2,
-.column-1{
+%column-styles {
   height:auto;
-  margin:0 100% * ($grid_margin / $container);
+  margin:0;
   padding:0;
-  flex-grow: 0;
-  flex-shrink: 0;
   text-align: center;
+
+  &.horizontal-left{
+    justify-self: flex-start;
+    align-self: flex-start;
+  }
+  &.horizontal-center{
+    justify-self: center;
+    align-self: center;
+  }
+  &.horizontal-right{
+    justify-self: flex-end;
+    align-self: flex-end;
+  }
+
+  &.vertical-top{
+    align-self: flex-start;
+  }
+  &.vertical-center{
+    justify-self: center;
+  }
+  &.vertical-bottom{
+    justify-self: flex-end;
+  }
 }
-.column-1{
-  width: grid(1);
-}
-.column-2{
-  width: grid(2);
-}
-.column-3{
-  width: grid(3);
-}
-.column-4{
-  width: grid(4);
-}
-.column-5{
-  width: grid(5);
-}
-.column-6{
-  width: grid(6);
-}
-.column-12{
-  width: grid(12);
+
+@for $i from 1 through $columns {
+  .column-#{$i} { @extend %column-styles;grid-column: span #{$i}; }
 }

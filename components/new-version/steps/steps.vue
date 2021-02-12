@@ -1,5 +1,5 @@
 <template>
-  <ol class="columns-container">
+  <ol class="grid">
     <Step v-for="(step, index) in steps" :number="index + 1" :title="step.title" :description="step.description" :key="index" />
   </ol>
 </template>

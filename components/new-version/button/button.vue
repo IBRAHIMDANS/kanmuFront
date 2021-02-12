@@ -1,7 +1,8 @@
 <template>
   <button :class="{
     button: true,
-    'primary-button': this.primary,
+    'fill-width': this.fillWidth,
+    'primary': this.primary,
     'big': this.big,
   }">
     <slot/>
@@ -12,6 +13,10 @@
 const Button = {
   inheritAttrs: false,
   props: {
+    fillWidth: {
+      default: false,
+      type: Boolean
+    },
     primary: {
       default: false,
       type: Boolean

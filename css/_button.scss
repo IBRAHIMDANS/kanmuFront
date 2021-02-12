@@ -8,11 +8,14 @@
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: normal;
   text-decoration: underline;
-}
-.primary-link{
-  color:#D8A929;
-}
 
+  &.disabled{
+    color:#707070;
+  }
+  &.primary{
+    color:#D8A929;
+  }
+}
 .button{
   padding:8px 41px 8px 14px;
   width:auto;
@@ -29,25 +32,46 @@
   background-image: url(../assets/arrow-gold.svg);
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: normal;
+  border:1px solid #D8A929;
 
   &.big{
     padding:14px 41px 14px 20px;
   }
-}
 
+  &.fill-width{
+    width:100%;
+    max-width:230px;
+  }
 
-.buttons-margin:not(:last-child){
-  margin-bottom:20px;
-}
-.buttons-margin:not(:first-child){
-  margin-top:20px;
+  &.primary{
+    background-color: #D8A929;
+    color: #ffffff;
+    background-image: url(../assets/arrow-white.svg);
+  }
 }
 .link:not(:first-child),
 .button:not(:first-child){
   margin:0 16px;
 }
-.primary-button{
-  background-color: #D8A929;
-  color: #ffffff;
-  background-image: url(../assets/arrow-white.svg);
+
+.buttons-container:not(:last-child){
+  margin-bottom:20px;
+
+  &.lower-margin{
+    margin-bottom:7px;
+  }
+  &.big-margin{
+    margin-bottom:40px;
+  }
 }
+.buttons-container:not(:first-child){
+  margin-top:20px;
+  &.lower-margin{
+    margin-top:7px;
+  }
+  &.big-margin{
+    margin-top:40px;
+  }
+}
+
+

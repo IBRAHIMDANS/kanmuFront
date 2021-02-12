@@ -1,18 +1,18 @@
 <template>
   <Section>
-    <Section color="black" big-padding-top big-padding-bottom triangle-bottom>
+    <Section color="black" padding-top="150" padding-bottom="150" triangle-bottom>
       <Grid>
         <Column width="6">
           <Title type="big">Nous sommes, A votre écoute</Title>
         </Column>
       </Grid>
     </Section>
-    <Section triangle-top="normal" padding-bottom padding-top>
+    <Section triangle-top="normal" padding-bottom="50" padding-top="50">
       <Grid>
         <Column width="6">
           <Paragraph bold>N'hésitez pas à nous écrire ou nous appeler :</Paragraph>
-          <Paragraph no-margin>Email : email@esport-kanmu.com</Paragraph>
-          <Paragraph no-margin>Tel : 06 40 55 67 87</Paragraph>
+          <Paragraph margin="no">Email : email@esport-kanmu.com</Paragraph>
+          <Paragraph margin="no">Tel : 06 40 55 67 87</Paragraph>
         </Column>
         <Column width="6">
           <form>
@@ -68,8 +68,8 @@
   import Button from '../components/new-version/button/button.vue'
   import Section from '../components/new-version/section.vue'
   import Paragraph from '../components/new-version/paragraph.vue'
-  import Grid from '../components/new-version/grid.vue'
-  import Column from '../components/new-version/column.vue'
+  import Grid from '../components/new-version/grid/index.vue'
+  import Column from '../components/new-version/grid/cell.vue'
   import Menu from '../components/new-version/menu.vue'
 
   export default Vue.extend({

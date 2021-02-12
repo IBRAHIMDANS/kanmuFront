@@ -1,0 +1,22 @@
+.bg-white{
+  background-color: $color_white;
+  color:$color_black;
+  &.triangle-top:before{
+    background-image: url(../assets/shape/triangle/white.svg);
+  }
+}
+.bg-black{
+  background-color: $color_black;
+  color:$color_white;
+  &.triangle-top:before{
+    background-image: url(../assets/shape/triangle/black.svg);
+  }
+}
+.bg-grey{
+  background-color: $color_grey;
+  color:$color_black;
+
+  &.triangle-top:before{
+    background-image: url(../assets/shape/triangle/grey.svg);
+  }
+}

@@ -68,8 +68,4 @@
   left:0;
   top:0;
 }
-
-body{
-  padding-top:146px;
-}
 </style>

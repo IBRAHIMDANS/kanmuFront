@@ -1,0 +1,45 @@
+%section{
+
+}
+
+footer,
+section,
+header,
+.section{
+  width:100%;
+  height:auto;
+  display:block;
+  position:relative;
+  box-sizing: border-box;
+
+  &.contact-background{
+    //background-image: url(../assets/background/contact.jpg);
+  }
+
+  &.inverted-triangle-top:before{
+    transform: scale3d(-1,1,1);
+  }
+
+  &.triangle-bottom{
+    padding-bottom: 70px;
+
+    &.padding-bottom-50{
+      padding-bottom:50px + 70px;
+    }
+  }
+
+  &.triangle-top:before,
+  &.inverted-triangle-top:before{
+    position:absolute;
+    left:0;
+    bottom:100%;
+    height:70px;
+    width:100%;
+    content:"";
+    display:block;
+    background-image: url(../assets/shape/triangle/white.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}

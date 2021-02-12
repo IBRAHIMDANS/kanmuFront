@@ -1,8 +1,9 @@
 <template>
   <a :class="{
     link: true,
-    'primary-link': this.primary,
-  }" class="section left-align buttons-margin">
+    'disabled': this.disabled,
+    'primary': this.primary,
+  }">
     <slot/>
   </a>
 </template>
@@ -12,6 +13,10 @@ const Link = {
   inheritAttrs: false,
   props: {
     primary: {
+      default: false,
+      type: Boolean
+    },
+    disabled: {
       default: false,
       type: Boolean
     },

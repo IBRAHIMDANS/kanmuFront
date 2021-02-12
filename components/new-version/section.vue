@@ -1,17 +1,19 @@
 <template>
   <section :class="{
     'section': true,
+    'align-left': this.horizontalAlign === 'left',
+    'align-center': this.horizontalAlign === 'center',
+    'align-right': this.horizontalAlign === 'right',
     'bg-black': this.color === 'black',
     'bg-white': this.color === 'white',
     'bg-grey': this.color === 'grey',
-    'padding-top': this.paddingTop && !this.bigPaddingTop,
-    'padding-bottom': this.paddingBottom && !this.bigPaddingBottom,
-    'big-padding-top': this.bigPaddingTop,
-    'big-padding-bottom': this.bigPaddingBottom,
+    'padding-bottom-50': Number(this.paddingBottom) === 50,
+    'padding-top-50': Number(this.paddingTop) === 50,
     'screen-size': this.screen,
     'triangle-bottom': this.triangleBottom,
     'triangle-top': this.triangleTop === 'normal',
     'inverted-triangle-top': this.triangleTop === 'inverted',
+    'contact-background': this.background === 'contact',
   }">
     <slot/>
   </section>
@@ -20,6 +22,10 @@
 const Section = {
   inheritAttrs: false,
   props: {
+    horizontalAlign: {
+      default: "center",
+      type: String
+    },
     color: {
       default: null,
       type: String
@@ -29,12 +35,12 @@ const Section = {
       type: Boolean
     },
     paddingTop: {
-      default: false,
-      type: Boolean
+      default: 0,
+      type: Number
     },
     paddingBottom: {
-      default: false,
-      type: Boolean
+      default: 0,
+      type: Number
     },
     triangleBottom: {
       default: false,
@@ -43,14 +49,6 @@ const Section = {
     triangleTop: {
       default: "no",
       type: String
-    },
-    bigPaddingTop: {
-      default: false,
-      type: Boolean
-    },
-    bigPaddingBottom: {
-      default: false,
-      type: Boolean
     },
   }
 }

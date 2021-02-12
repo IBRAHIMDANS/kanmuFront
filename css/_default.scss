@@ -25,3 +25,9 @@ a{
   text-decoration: none;
   color:inherit;
 }
+img{
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height:auto;
+}

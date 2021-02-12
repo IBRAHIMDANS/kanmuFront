@@ -1,19 +1,21 @@
 @import "variables";
 @import "default";
 @import "grid";
-@import "section";
-@import "nav";
+
 @import "sponsor";
-@import "footer";
+
 @import "button";
-@import "title";
-@import "paragraph";
-@import "vertical-align";
 @import "statistic";
 @import "step";
 @import "paralel-image";
-@import "modifier";
+@import "components";
+@import "modifiers";
 @import "input";
+
+@import "footer";
+@import "nav";
+
+
 @import "./older/main";
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Orbitron:wght@600&display=swap');
@@ -26,5 +28,116 @@
 }
 
 
+.image-team{
+  display:block;
+  height:230px;
+  width:100%;
+  object-fit:cover;
+  object-position: center;
+}
+.image-logo{
+  display:block;
+  height:auto;
+  background-color:#FFFFFF;
+  border:1px solid #dedede;
+  width:100%;
+  object-fit:cover;
+  object-position: center;
+  margin-top:-100px;
+}
+
+
+.box{
+  padding:0 16px;
+  box-sizing: border-box;
+  width:100%;
+  height:auto;
+  display:block;
+  border:1px solid #DEDEDE;
+  margin:22px 0 0 0;
+
+  &.collapse-top{
+    margin:0;
+    border-top:0 none transparent;
+  }
+}
+
+.sponsors-list{
+  width:100%;
+  height:auto;
+  padding:0;
+  display:flex;
+  margin: 23px 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+
+  a{
+    width:auto;
+    height:auto;
+    display:block;
+  }
+  img{
+    width:100%;
+    height:auto;
+  }
+
+  li{
+    max-width:100px;
+    width:calc(25% - 14px);
+    margin:7px;
+  }
+}
+
+.info-box{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  .name{
+    width:100%;
+    height:auto;
+    text-transform: uppercase;
+    text-align: center;
+    margin:15px 0 2px 0;
+    padding:0;
+    color:#707070;
+    font-size:10px;
+    line-height:22px;
+  }
+  .value{
+    width:100%;
+    height:auto;
+    text-transform: uppercase;
+    text-align: center;
+    margin:2px 0 15px 0;
+    padding:0;
+    color:#000;
+    font-size:20px;
+    line-height:22px;
+  }
+}
+
+.inline-box{
+  display:flex;
+  flex-direction: row;
+  justify-content: stretch;
+  width:100%;
+  height:auto;
+  align-content: stretch;
+  align-items: stretch;
+
+  .box{
+    margin: 0;
+    border:0 none transparent;
+  }
+  .box:not(:first-child){
+    border-left: 1px solid #dedede;
+  }
+}
 
 
